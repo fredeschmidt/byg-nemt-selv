@@ -1,6 +1,6 @@
 ---
 name: architecture
-description: Maintain and extend the Byg Nemt Selv frontend architecture with lowercase component folders, CSS-first structure, and JavaScript only when strictly necessary.
+description: Maintain and extend the Byg Nemt Selv frontend architecture with lowercase component folders, CSS-first structure, strict semantic HTML, and JavaScript only when strictly necessary.
 ---
 
 # Architecture Skill
@@ -43,6 +43,28 @@ Use this skill when creating or updating frontend pages in this project.
 9. In page HTML, include only `styles/global.css` as stylesheet.
 10. Keep image assets in `images/`.
 
+## Semantic HTML Enforcement (Strict)
+
+These rules are mandatory.
+
+1. Use semantic layout tags: `header`, `main`, `nav`, `section`, `article`, `aside`, `footer`.
+2. Use one `h1` per page; follow heading hierarchy (`h1` -> `h2` -> `h3`) without skipping levels.
+3. Use `a` for navigation, and `button` for actions. Never use clickable `div`/`span`.
+4. Wrap grouped links in `nav` where it is navigation.
+5. Use `ul`/`ol` + `li` for lists. Never fake lists with paragraph stacks.
+6. Use `figure`/`figcaption` where image caption context exists.
+7. Use `form`, `label`, and correct input types for user input. Every control must have an accessible label.
+8. Use `strong`/`em` for meaning, not purely visual styling.
+9. Do not use generic wrappers when a semantic element fits better.
+10. Avoid ARIA when native semantic HTML already provides the meaning.
+
+## Semantic Anti-Patterns (Do Not Do)
+
+- No clickable cards built as `div` with JS click handlers.
+- No button-like links for non-navigation actions.
+- No heading styling on non-heading tags when a real heading should be used.
+- No empty semantic landmarks.
+
 ## Styling Convention
 
 Add component stylesheet imports at the top of `styles/global.css`, for example:
@@ -66,3 +88,4 @@ Add component stylesheet imports at the top of `styles/global.css`, for example:
 - Add/extend markup directly in HTML when static.
 - Add its stylesheet import to `styles/global.css`.
 - Avoid inline styles unless there is a strong reason.
+- Validate semantic structure before finalizing changes.
