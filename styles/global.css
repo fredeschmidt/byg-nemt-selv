@@ -6,8 +6,6 @@
   justify-content: center;
   padding: 14px 12px;
   text-align: center;
-  background: #f4f1ea;
-  border-bottom: 1px solid rgba(255, 255, 255, 0.2);
 }
 @media (min-width: 801px) {
   #header {
@@ -18,9 +16,10 @@
 .header-logo {
   position: absolute;
   top: 10px;
-  left: 10px;
-  width: 34px;
-  height: 34px;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 74px;
+  height: 74px;
   border-radius: 8px;
   object-fit: cover;
 }
@@ -28,6 +27,7 @@
   .header-logo {
     top: 14px;
     left: 14px;
+    transform: none;
     width: 106px;
     height: 106px;
   }
@@ -38,12 +38,15 @@
   display: grid;
   justify-items: center;
   gap: 8px;
+  margin-top: 50px;
 }
 
 .header-title {
   margin: 0;
+  font-family: "Fugaz One", sans-serif;
+  font-weight: 400;
+  font-style: normal;
   font-size: clamp(1.8rem, 4vw, 2.7rem);
-  font-weight: 800;
   letter-spacing: 0.02em;
   line-height: 1.05;
   color: #000;
@@ -57,13 +60,18 @@
 }
 
 .header-steps {
+  width: 100%;
   margin: 4px 0 0;
   padding: 0;
   list-style: none;
-  width: 100%;
   display: grid;
   grid-template-columns: repeat(3, minmax(0, 1fr));
   gap: 10px;
+}
+@media (min-width: 801px) {
+  .header-steps {
+    width: 80%;
+  }
 }
 
 .header-step {
@@ -71,46 +79,40 @@
   justify-items: center;
   gap: 4px;
 }
-
 .header-step__number {
-  width: 28px;
-  height: 28px;
   display: inline-flex;
   align-items: center;
   justify-content: center;
-  border: 1px solid #111;
-  border-radius: 4px;
-  background: #fff;
   color: #111;
   font-weight: 700;
   line-height: 1;
+  font-size: 30px;
+  font-family: "Fugaz One", sans-serif;
 }
-
 .header-step__text {
   font-size: 0.8rem;
   color: #111;
   line-height: 1.2;
   font-weight: 600;
 }
-
+@media (min-width: 801px) {
+  .header-step__text {
+    font-size: 0.9rem;
+  }
+}
 .header-step__subtext {
+  display: none;
   font-size: 0.72rem;
   color: #555;
   line-height: 1.2;
 }
-
 @media (min-width: 801px) {
-  .header-step__number {
-    width: 32px;
-    height: 32px;
-  }
-  .header-step__text {
-    font-size: 0.9rem;
-  }
   .header-step__subtext {
+    display: block;
     font-size: 0.78rem;
   }
 }
+
 #category-grid {
   width: 100%;
   max-width: 1200px;
