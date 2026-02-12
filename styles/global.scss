@@ -1,0 +1,27 @@
+@use "../components/header/header";
+@use "../components/category-grid/category-grid";
+@use "../components/category-card/category-card";
+
+:root {
+  --header-height: 112px;
+
+  @media (min-width: 801px) {
+    --header-height: 226px;
+  }
+}
+
+* {
+  box-sizing: border-box;
+}
+
+html,
+body {
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  font-family: Arial, sans-serif;
+  background: #f4f1ea;
+  color: #ffffff;
+}

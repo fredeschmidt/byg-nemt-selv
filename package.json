@@ -1,0 +1,26 @@
+{
+  "name": "byg-nemt-selv",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "scss:build": "sass styles/global.scss styles/global.css --style=expanded --no-error-css",
+    "scss:watch": "sass --watch styles/global.scss styles/global.css --style=expanded --no-error-css",
+    "dev": "npm run scss:watch"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/fredeschmidt/byg-nemt-selv.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/fredeschmidt/byg-nemt-selv/issues"
+  },
+  "homepage": "https://github.com/fredeschmidt/byg-nemt-selv#readme",
+  "devDependencies": {
+    "sass": "^1.97.3"
+  }
+}

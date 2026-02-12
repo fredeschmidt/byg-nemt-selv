@@ -1,6 +1,6 @@
 ---
 name: architecture
-description: Maintain and extend the Byg Nemt Selv frontend architecture with lowercase component folders, CSS-first structure, strict semantic HTML, mobile-first styling, and JavaScript only when strictly necessary.
+description: Maintain and extend the Byg Nemt Selv frontend architecture with lowercase component folders, SCSS-first source files, strict semantic HTML, mobile-first styling, and JavaScript only when strictly necessary.
 ---
 
 # Architecture Skill
@@ -21,13 +21,15 @@ Use this skill when creating or updating frontend pages in this project.
 │   └── smal-gang.jpg
 ├── components/
 │   ├── header/
-│   │   └── header.css
+│   │   └── header.scss
 │   ├── category-grid/
-│   │   └── category-grid.css
+│   │   └── category-grid.scss
 │   └── category-card/
-│       └── category-card.css
-└── styles/
-    └── global.css
+│       └── category-card.scss
+├── styles/
+│   ├── global.scss
+│   └── global.css   (generated)
+└── package.json
 ```
 
 ## Rules To Follow
@@ -35,14 +37,13 @@ Use this skill when creating or updating frontend pages in this project.
 1. Keep each UI component in its own folder under `components/`.
 2. Component folder names must use lowercase letters only.
 3. Use kebab-case for multi-word component folder names (for example `category-grid`).
-4. Each component should have its own CSS file.
-5. Use HTML and CSS by default.
+4. Each component should have its own SCSS file.
+5. Use HTML and SCSS by default.
 6. Never add JavaScript unless it is strictly necessary for behavior that HTML/CSS cannot handle.
 7. Keep page HTML files simple and readable.
-8. Import component styles in `styles/global.css`.
-9. In page HTML, include only `styles/global.css` as stylesheet.
-10. Keep image assets in `images/`.
-11. All styling must follow a mobile-first approach.
+8. Frontend must load `styles/global.css`.
+9. Keep image assets in `images/`.
+10. All styling must follow a mobile-first approach.
 
 ## Semantic HTML Enforcement (Strict)
 
@@ -59,13 +60,6 @@ These rules are mandatory.
 9. Do not use generic wrappers when a semantic element fits better.
 10. Avoid ARIA when native semantic HTML already provides the meaning.
 
-## Semantic Anti-Patterns (Do Not Do)
-
-- No clickable cards built as `div` with JS click handlers.
-- No button-like links for non-navigation actions.
-- No heading styling on non-heading tags when a real heading should be used.
-- No empty semantic landmarks.
-
 ## Mobile-First Styling (Strict)
 
 These rules are mandatory.
@@ -76,15 +70,33 @@ These rules are mandatory.
 4. Keep spacing, typography, and layout readable at small widths before adding desktop enhancements.
 5. Ensure touch targets and interactive elements remain usable on mobile.
 
-## Styling Convention
+## SCSS Convention (Strict)
 
-Add component stylesheet imports at the top of `styles/global.css`, for example:
+These rules are mandatory and represent the preferred SCSS way of building in this project.
 
-```css
-@import url("../components/header/header.css");
-@import url("../components/category-grid/category-grid.css");
-@import url("../components/category-card/category-card.css");
+1. Use `@use` in `styles/global.scss` to load component SCSS files.
+2. Write SCSS mobile-first and place media queries inside the relevant selector block whenever possible.
+3. Use nesting for pseudo-classes, pseudo-elements, modifiers, and tightly coupled child selectors.
+4. Keep nesting shallow (target max 3 levels). If deeper nesting appears, refactor selector structure.
+5. Follow clear component naming (BEM-style classes are preferred for readability and scalability).
+6. Keep component-specific styles inside the component SCSS file.
+7. Keep global variables/tokens in `styles/global.scss` unless they clearly belong to one component.
+8. Keep formatting clean and readable: logical grouping, blank lines between groups, and consistent property order.
+9. Never manually edit `styles/global.css`. It is generated output.
+
+Example `styles/global.scss` imports:
+
+```scss
+@use "../components/header/header";
+@use "../components/category-grid/category-grid";
+@use "../components/category-card/category-card";
 ```
+
+## Build Workflow (Required)
+
+- Run one-time build: `npm run scss:build`
+- Run watch mode while developing: `npm run dev`
+- `styles/global.css` must always be generated from `styles/global.scss`
 
 ## JavaScript Policy
 
@@ -97,7 +109,8 @@ Add component stylesheet imports at the top of `styles/global.css`, for example:
 - For a new section, create a new component folder first.
 - Use lowercase naming for all new component folder names.
 - Add/extend markup directly in HTML when static.
-- Add its stylesheet import to `styles/global.css`.
+- Add its SCSS import to `styles/global.scss`.
 - Avoid inline styles unless there is a strong reason.
 - Validate semantic structure before finalizing changes.
 - Validate mobile behavior first, then desktop.
+- Rebuild styles before finalizing (`npm run scss:build`).
