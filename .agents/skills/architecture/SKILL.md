@@ -1,6 +1,6 @@
 ---
 name: architecture
-description: Maintain and extend the Byg Nemt Selv frontend architecture with lowercase component folders, CSS-first structure, strict semantic HTML, and JavaScript only when strictly necessary.
+description: Maintain and extend the Byg Nemt Selv frontend architecture with lowercase component folders, CSS-first structure, strict semantic HTML, mobile-first styling, and JavaScript only when strictly necessary.
 ---
 
 # Architecture Skill
@@ -42,6 +42,7 @@ Use this skill when creating or updating frontend pages in this project.
 8. Import component styles in `styles/global.css`.
 9. In page HTML, include only `styles/global.css` as stylesheet.
 10. Keep image assets in `images/`.
+11. All styling must follow a mobile-first approach.
 
 ## Semantic HTML Enforcement (Strict)
 
@@ -64,6 +65,16 @@ These rules are mandatory.
 - No button-like links for non-navigation actions.
 - No heading styling on non-heading tags when a real heading should be used.
 - No empty semantic landmarks.
+
+## Mobile-First Styling (Strict)
+
+These rules are mandatory.
+
+1. Write base styles for mobile first (small screens as default).
+2. Scale up with `@media (min-width: ...)` breakpoints.
+3. Do not start with desktop styles and patch down with `max-width` unless absolutely required.
+4. Keep spacing, typography, and layout readable at small widths before adding desktop enhancements.
+5. Ensure touch targets and interactive elements remain usable on mobile.
 
 ## Styling Convention
 
@@ -89,3 +100,4 @@ Add component stylesheet imports at the top of `styles/global.css`, for example:
 - Add its stylesheet import to `styles/global.css`.
 - Avoid inline styles unless there is a strong reason.
 - Validate semantic structure before finalizing changes.
+- Validate mobile behavior first, then desktop.
