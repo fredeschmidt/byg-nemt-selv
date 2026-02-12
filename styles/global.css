@@ -1,0 +1,19 @@
+@import url("../components/header/header.css");
+@import url("../components/category-grid/category-grid.css");
+@import url("../components/category-card/category-card.css");
+
+* {
+  box-sizing: border-box;
+}
+
+html,
+body {
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  font-family: Arial, sans-serif;
+  background: #f4f1ea;
+  color: #ffffff;
+}

@@ -1,0 +1,34 @@
+.category-card {
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-decoration: none;
+  color: #fff;
+  background-size: cover;
+  background-position: center;
+  overflow: hidden;
+}
+
+.category-card::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(rgba(0, 0, 0, 0.35), rgba(0, 0, 0, 0.45));
+  transition: background 0.25s ease;
+}
+
+.category-card:hover::before,
+.category-card:focus-visible::before {
+  background: linear-gradient(rgba(0, 0, 0, 0.2), rgba(0, 0, 0, 0.3));
+}
+
+.category-card span {
+  position: relative;
+  z-index: 1;
+  padding: 14px 18px;
+  border: 1px solid rgba(255, 255, 255, 0.7);
+  background: rgba(0, 0, 0, 0.25);
+  font-size: clamp(1.1rem, 2vw, 1.8rem);
+  font-weight: 700;
+}

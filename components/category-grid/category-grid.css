@@ -1,0 +1,13 @@
+#category-grid {
+  min-height: calc(100vh - 88px);
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+}
+
+@media (max-width: 800px) {
+  #category-grid {
+    min-height: calc(100vh - 76px);
+    grid-template-columns: 1fr;
+    grid-template-rows: repeat(3, 1fr);
+  }
+}
