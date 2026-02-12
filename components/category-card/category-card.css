@@ -10,6 +10,18 @@
   overflow: hidden;
 }
 
+.category-card--lille {
+  background-image: url("../../images/lille-entre.jpg");
+}
+
+.category-card--boerne {
+  background-image: url("../../images/bornefamilie.jpg");
+}
+
+.category-card--smal {
+  background-image: url("../../images/smal-gang.jpg");
+}
+
 .category-card::before {
   content: "";
   position: absolute;

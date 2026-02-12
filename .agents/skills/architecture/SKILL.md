@@ -1,6 +1,6 @@
 ---
 name: architecture
-description: Maintain and extend the Byg Nemt Selv frontend architecture with component folders, per-component CSS/JS, and central stylesheet imports.
+description: Maintain and extend the Byg Nemt Selv frontend architecture with lowercase component folders, CSS-first structure, and JavaScript only when strictly necessary.
 ---
 
 # Architecture Skill
@@ -15,19 +15,17 @@ Use this skill when creating or updating frontend pages in this project.
 ├── boernefamilie.html
 ├── lille-entre.html
 ├── smal-gang.html
+├── images/
+│   ├── lille-entre.jpg
+│   ├── bornefamilie.jpg
+│   └── smal-gang.jpg
 ├── components/
 │   ├── header/
-│   │   ├── header.css
-│   │   └── header.js
+│   │   └── header.css
 │   ├── category-grid/
-│   │   ├── category-grid.css
-│   │   └── category-grid.js
+│   │   └── category-grid.css
 │   └── category-card/
 │       └── category-card.css
-├── data/
-│   └── categories.js
-├── js/
-│   └── main.js
 └── styles/
     └── global.css
 ```
@@ -38,11 +36,12 @@ Use this skill when creating or updating frontend pages in this project.
 2. Component folder names must use lowercase letters only.
 3. Use kebab-case for multi-word component folder names (for example `category-grid`).
 4. Each component should have its own CSS file.
-5. Add a JS file per component when behavior/init logic is needed.
-6. Keep page HTML files clean and minimal (mount points + script include).
-7. Import component styles in `styles/global.css`.
-8. In page HTML, include only `styles/global.css` as stylesheet.
-9. Keep shared/static content in `data/` and app entry files in `js/`.
+5. Use HTML and CSS by default.
+6. Never add JavaScript unless it is strictly necessary for behavior that HTML/CSS cannot handle.
+7. Keep page HTML files simple and readable.
+8. Import component styles in `styles/global.css`.
+9. In page HTML, include only `styles/global.css` as stylesheet.
+10. Keep image assets in `images/`.
 
 ## Styling Convention
 
@@ -54,16 +53,16 @@ Add component stylesheet imports at the top of `styles/global.css`, for example:
 @import url("../components/category-card/category-card.css");
 ```
 
-## Implementation Pattern
+## JavaScript Policy
 
-- `index.html` loads `styles/global.css` and `js/main.js`.
-- `js/main.js` imports component JS modules and initializes them.
-- Data used by components is defined in `data/*.js`.
+- Do not introduce JS for static layout, navigation, or styling.
+- Add JS only for real interactivity/state/logic that cannot be solved with semantic HTML and CSS.
+- If JS is required, keep it minimal and scoped to one component.
 
 ## When Extending
 
 - For a new section, create a new component folder first.
 - Use lowercase naming for all new component folder names.
-- Wire the component through `js/main.js`.
+- Add/extend markup directly in HTML when static.
 - Add its stylesheet import to `styles/global.css`.
 - Avoid inline styles unless there is a strong reason.
