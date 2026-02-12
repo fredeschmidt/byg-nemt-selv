@@ -37,8 +37,13 @@
   width: min(920px, 100%);
   display: grid;
   justify-items: center;
-  gap: 8px;
-  margin-top: 50px;
+  gap: 18px;
+  margin-top: 60px;
+}
+@media (min-width: 801px) {
+  .header-inner {
+    margin-top: 30px;
+  }
 }
 
 .header-title {
@@ -46,7 +51,7 @@
   font-family: "Fugaz One", sans-serif;
   font-weight: 400;
   font-style: normal;
-  font-size: clamp(1.8rem, 4vw, 2.7rem);
+  font-size: 40px;
   letter-spacing: 0.02em;
   line-height: 1.05;
   color: #000;
@@ -54,7 +59,7 @@
 
 .header-subtitle {
   margin: 0;
-  font-size: clamp(0.92rem, 1.4vw, 1.05rem);
+  font-size: 20px;
   color: #000;
   max-width: 60ch;
 }
@@ -68,15 +73,11 @@
   grid-template-columns: repeat(3, minmax(0, 1fr));
   gap: 10px;
 }
-@media (min-width: 801px) {
-  .header-steps {
-    width: 80%;
-  }
-}
 
 .header-step {
   display: grid;
   justify-items: center;
+  align-items: flex-start;
   gap: 4px;
 }
 .header-step__number {
@@ -90,26 +91,26 @@
   font-family: "Fugaz One", sans-serif;
 }
 .header-step__text {
-  font-size: 0.8rem;
+  font-size: 15px;
   color: #111;
   line-height: 1.2;
   font-weight: 600;
 }
 @media (min-width: 801px) {
   .header-step__text {
-    font-size: 0.9rem;
+    font-size: 20px;
   }
 }
 .header-step__subtext {
   display: none;
-  font-size: 0.72rem;
+  font-size: 14px;
   color: #555;
   line-height: 1.2;
 }
 @media (min-width: 801px) {
   .header-step__subtext {
     display: block;
-    font-size: 0.78rem;
+    font-size: 18px;
   }
 }
 
@@ -139,7 +140,7 @@
   justify-content: center;
   height: 100%;
   padding: 20px;
-  border-radius: 14px;
+  border-radius: 0;
   overflow: hidden;
   text-decoration: none;
   color: #fff;
@@ -194,8 +195,8 @@
 
 .category-card__meta {
   margin: 0;
-  font-size: clamp(0.88rem, 1.2vw, 1rem);
-  line-height: 1.35;
+  font-size: 18px;
+  line-height: 1.5;
 }
 
 :root {

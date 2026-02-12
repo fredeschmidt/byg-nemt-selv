@@ -37,6 +37,9 @@
   justify-items: center;
   gap: 18px;
   margin-top: 60px;
+  @media (min-width: 801px) {
+    margin-top: 30px;
+  }
 }
 
 .header-title {
@@ -44,7 +47,7 @@
   font-family: "Fugaz One", sans-serif;
   font-weight: 400;
   font-style: normal;
-  font-size: clamp(1.8rem, 4vw, 2.7rem);
+  font-size: 50px;
   letter-spacing: 0.02em;
   line-height: 1.05;
   color: #000;
@@ -52,7 +55,7 @@
 
 .header-subtitle {
   margin: 0;
-  font-size: clamp(0.92rem, 1.4vw, 1.05rem);
+  font-size: 20px;
   color: #000;
   max-width: 60ch;
 }
@@ -66,15 +69,12 @@
   display: grid;
   grid-template-columns: repeat(3, minmax(0, 1fr));
   gap: 10px;
-
-  @media (min-width: 801px) {
-      width: 80%;
-  }
 }
 
 .header-step {
   display: grid;
   justify-items: center;
+  align-items: flex-start;
   gap: 4px;
 
   &__number {
@@ -90,25 +90,25 @@
   }
 
   &__text {
-    font-size: 0.8rem;
+    font-size: 15px;
     color: #111;
     line-height: 1.2;
     font-weight: 600;
 
     @media (min-width: 801px) {
-      font-size: 0.9rem;
+      font-size: 20px;
     }
   }
 
   &__subtext {
     display: none;
-    font-size: 0.72rem;
+    font-size: 14px;
     color: #555;
     line-height: 1.2;
 
     @media (min-width: 801px) {
       display: block;
-      font-size: 0.78rem;
+      font-size: 18px;
     }
   }
 }
