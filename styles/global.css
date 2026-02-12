@@ -48,15 +48,14 @@
 
 .header-title {
   margin: 0;
-  font-weight: 400;
+  font-weight: 600;
   font-style: normal;
   font-size: 50px;
   letter-spacing: 0.02em;
   line-height: 1.05;
-  color: #fff;
   font-family: "Orbitron", sans-serif;
   font-optical-sizing: auto;
-  background-color: #093FB4;
+  color: #000;
 }
 
 .header-subtitle {
@@ -86,7 +85,7 @@
   display: inline-flex;
   align-items: center;
   justify-content: center;
-  color: #111;
+  color: #093FB4;
   font-weight: 700;
   line-height: 1;
   font-size: 30px;
@@ -203,9 +202,8 @@
   border: 1px solid rgba(255, 255, 255, 0.78);
   background: rgba(0, 0, 0, 0.28);
   font-size: clamp(1.2rem, 2vw, 1.9rem);
-  font-weight: 700;
-  font-family: "Orbitron", sans-serif;
-  font-optical-sizing: auto;
+  font-weight: 400;
+  font-family: "Roboto", sans-serif;
 }
 
 .category-card__description {
