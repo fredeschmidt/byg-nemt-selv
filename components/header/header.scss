@@ -26,8 +26,8 @@
     top: 14px;
     left: 14px;
     transform: none;
-    width: 106px;
-    height: 106px;
+    width: 156px;
+    height: 156px;
   }
 }
 
@@ -44,13 +44,15 @@
 
 .header-title {
   margin: 0;
-  font-family: "Fugaz One", sans-serif;
   font-weight: 400;
   font-style: normal;
   font-size: 50px;
   letter-spacing: 0.02em;
   line-height: 1.05;
-  color: #000;
+  color: #fff;
+  font-family: "Orbitron", sans-serif;
+  font-optical-sizing: auto;
+  background-color: #093FB4;
 }
 
 .header-subtitle {
@@ -86,14 +88,16 @@
     font-weight: 700;
     line-height: 1;
     font-size: 30px;
-    font-family: "Fugaz One", sans-serif;
+    font-family: "Orbitron", sans-serif;
+    font-optical-sizing: auto;
   }
 
   &__text {
-    font-size: 15px;
+    font-size: 13px;
     color: #111;
     line-height: 1.2;
-    font-weight: 600;
+    font-weight: 400;
+    font-family: "Roboto", sans-serif;
 
     @media (min-width: 801px) {
       font-size: 20px;
