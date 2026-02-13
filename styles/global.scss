@@ -5,6 +5,25 @@
 
 :root {
   --header-height: 112px;
+  --font-family-base: "Roboto", sans-serif;
+  --font-weight-regular: 400;
+  --font-weight-semibold: 600;
+  --font-weight-bold: 700;
+  --line-height-tight: 1.05;
+  --line-height-compact: 1.2;
+  --line-height-base: 1.5;
+  --color-bg-page: #f4f1ea;
+  --color-bg-header: #1f2833;
+  --color-text-primary: #093fb4;
+  --color-text-default: #1f2833;
+  --color-text-strong: #000;
+  --color-text-neutral: #111;
+  --color-text-muted: #555;
+  --color-text-inverse: #fff;
+  --color-border-inverse: rgba(255, 255, 255, 0.78);
+  --color-overlay-dark: rgba(0, 0, 0, 0.28);
+  --color-overlay-hover-start: rgba(0, 0, 0, 0.35);
+  --color-overlay-hover-end: rgba(0, 0, 0, 0.5);
 
   @media (min-width: 801px) {
     --header-height: 226px;
@@ -22,9 +41,9 @@ body {
 }
 
 body {
-  font-family: "Roboto", sans-serif;
-  background: #f4f1ea;
-  color: #093FB4;
+  font-family: var(--font-family-base);
+  background: var(--color-bg-page);
+  color: var(--color-text-primary);
 }
 
 .simple-page__header {
@@ -33,14 +52,14 @@ body {
   align-items: center;
   justify-content: center;
   padding: 12px 16px;
-  background: #1f2833;
+  background: var(--color-bg-header);
 }
 
 .simple-page__home-link {
-  color: #fff;
+  color: var(--color-text-inverse);
   text-decoration: none;
   font-size: 1.5rem;
-  font-weight: 700;
+  font-weight: var(--font-weight-bold);
 }
 
 .simple-page__main {
@@ -50,17 +69,17 @@ body {
 
   h1 {
     margin: 0 0 14px;
-    color: #1f2833;
+    color: var(--color-text-default);
   }
 
   p {
     margin: 0 0 12px;
-    line-height: 1.5;
-    color: #1f2833;
+    line-height: var(--line-height-base);
+    color: var(--color-text-default);
   }
 
   a {
-    color: #1f2833;
-    font-weight: 700;
+    color: var(--color-text-default);
+    font-weight: var(--font-weight-bold);
   }
 }

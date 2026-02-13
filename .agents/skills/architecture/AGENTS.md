@@ -13,6 +13,7 @@ For page/component work, run this skill before editing files.
 - Do not skip, merge, or reorder mandatory rules.
 - If required context is missing, resolve it before continuing.
 - Enforce semantic HTML, mobile-first styling, and SCSS conventions.
+- Enforce global design tokens for fonts/font styling/colors via `:root` in `styles/global.scss`.
 
 ## Routing
 

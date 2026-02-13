@@ -47,6 +47,13 @@ Use this skill when creating or updating frontend pages in this project.
 8. Keep formatting clean: logical groups, consistent spacing, consistent property order.
 9. Never manually edit `styles/global.css`. It is generated output.
 
+## Design Tokens (Strict)
+
+1. Define global font-family, font-style tokens (for example weights and line-height), and color tokens in `:root` in `styles/global.scss`.
+2. Use `var(...)` tokens in component SCSS instead of hardcoded color/font values.
+3. Add new global tokens only when reused or clearly part of the design system.
+4. Keep token names semantic (`--color-text-primary`, not `--blue-500` unless palette mapping is intentional).
+
 Example `styles/global.scss` imports:
 
 ```scss
