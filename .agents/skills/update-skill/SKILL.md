@@ -5,77 +5,59 @@ description: Update existing skills while keeping them simple, coherent, and non
 
 # Update Skill
 
-Use this skill when the user asks to update any skill file (`SKILL.md`, `AGENTS.md`) and wants the result to stay clean and easy to maintain.
+Use this skill when a user asks to update `SKILL.md` or `AGENTS.md` and wants the result cleaner without losing intent.
 
-## Core Intent
+## Goal
 
-Keep skills simple and clean without losing context.
-Every update must fit the full skill flow, not just a local section.
+Keep instructions short, clear, and non-duplicative.
+Integrate updates into the full skill flow, not as isolated add-ons.
 
-## Non-Negotiable Rules
+## Required Rules
 
 1. Read the whole target skill file before editing.
-2. If related files exist for that skill (`AGENTS.md`), read the relevant ones before editing.
-3. Do not append blindly. Integrate changes where they logically belong.
-4. Avoid repetition:
-   - no duplicate rules,
-   - no repeated wording across sections unless required,
-   - merge overlapping instructions.
-5. Preserve structure clarity:
-   - short sections,
-   - predictable headings,
-   - direct language,
-   - minimal but sufficient detail.
-6. Keep behavioral intent intact when refactoring wording.
+2. Read relevant related files (for example `AGENTS.md`) before editing.
+3. Place changes where they logically belong; do not append blindly.
+4. Remove or merge overlaps and repeated wording.
+5. Keep sections short, headings predictable, and language direct.
+6. Preserve behavioral intent when refactoring.
 
-## Placement Recommendation Rule (Mandatory)
+## Placement Decision (Mandatory)
 
-Always recommend the best home for the requested update before applying it.
-This recommendation is mandatory even when the user asks for a specific file.
+Recommend the best location before editing, even if the user named a file.
 
-Evaluate placement in this order:
+Choose in this order:
 
 1. Existing skill, existing section (best).
 2. Existing skill, new section (if concept is new but belongs there).
 3. Different existing skill (if concern belongs elsewhere).
-4. New skill (only if concern is reusable and does not fit existing skills cleanly).
+4. New skill (only if reusable and it does not fit existing skills cleanly).
 
-When requested file is likely wrong, explicitly say:
-- why it is a mismatch,
-- which file/skill is better,
-- whether to move or duplicate (default: move, not duplicate).
+If the requested file is a poor fit, state:
+1. Why it is a mismatch.
+2. Which file is better.
+3. Whether to move or duplicate (default: move).
 
-Recommend a new skill only when:
-- the rule is cross-cutting and reusable across many skills,
-- it introduces a distinct workflow,
-- adding it to an existing skill would create conceptual clutter.
+Recommend a new skill only when all are true:
+1. The rule is reusable across multiple skills.
+2. It defines a distinct workflow.
+3. Adding it to an existing skill would cause clutter.
 
-## Workflow (Execute In Order)
+## Workflow
 
 1. Parse the requested update.
-2. Read the entire target file(s) end-to-end.
-3. Identify overlaps/conflicts/duplication risk.
-4. Provide placement recommendation:
-   - best file,
-   - rationale,
-   - note if requested target is suboptimal.
-5. Apply edit in the recommended location.
-6. Refactor nearby text to keep flow coherent.
-7. Run a clean-up pass:
-   - remove duplicates,
-   - normalize terminology,
-   - keep section length tight.
-8. Report:
-   - what changed,
-   - why this location was chosen,
-   - alternatives considered,
-   - any follow-up suggestions.
+2. Read all relevant file(s) end-to-end.
+3. Identify duplication, conflicts, and wording drift.
+4. Give placement recommendation with rationale.
+5. Apply edit in the chosen location.
+6. Refactor nearby text for flow and consistency.
+7. Run a cleanup pass: deduplicate, normalize terms, tighten sections.
+8. Report outcome clearly.
 
 ## Output Requirements
 
-When done, report:
+Report:
 
-1. Recommendation summary (best placement + reason).
+1. Placement recommendation and reason.
 2. Files changed.
-3. Structural cleanup performed (if any).
-4. Any remaining ambiguity and your recommended next step.
+3. Cleanup performed.
+4. Remaining ambiguity and recommended next step.
