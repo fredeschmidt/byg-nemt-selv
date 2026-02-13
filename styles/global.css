@@ -26,6 +26,20 @@
   font-weight: 400;
   font-display: swap;
 }
+@font-face {
+  font-family: "Playfair Display";
+  src: url("../fonts/PlayfairDisplay-VariableFont_wght.ttf") format("truetype");
+  font-style: normal;
+  font-weight: 400 900;
+  font-display: swap;
+}
+@font-face {
+  font-family: "Playfair Display";
+  src: url("../fonts/PlayfairDisplay-Italic-VariableFont_wght.ttf") format("truetype");
+  font-style: italic;
+  font-weight: 400 900;
+  font-display: swap;
+}
 #header {
   position: relative;
   min-height: var(--header-height);
@@ -76,6 +90,7 @@
 
 .header-title {
   margin: 0;
+  font-family: var(--font-family-header);
   font-weight: var(--font-weight-semibold);
   font-style: normal;
   font-size: 50px;
@@ -265,6 +280,8 @@
 :root {
   --header-height: 112px;
   --font-family-base: "Roboto", sans-serif;
+  --font-family-header: "Playfair Display", serif;
+  --font-family-accent: "Playfair Display", serif;
   --font-weight-regular: 400;
   --font-weight-semibold: 600;
   --font-weight-bold: 700;
