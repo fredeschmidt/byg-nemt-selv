@@ -46,6 +46,7 @@ Use this skill when creating or updating frontend pages in this project.
 7. Keep global variables and tokens in `styles/global.scss` unless clearly component-specific.
 8. Keep formatting clean: logical groups, consistent spacing, consistent property order.
 9. Never manually edit `styles/global.css`. It is generated output.
+10. When removing HTML markup, remove the corresponding unused SCSS selectors and dead style rules in the same change.
 
 ## Design Tokens (Strict)
 

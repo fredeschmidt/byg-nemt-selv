@@ -14,6 +14,7 @@ For page/component work, run this skill before editing files.
 - If required context is missing, resolve it before continuing.
 - Enforce semantic HTML, mobile-first styling, and SCSS conventions.
 - Enforce global design tokens for fonts/font styling/colors via `:root` in `styles/global.scss`.
+- Enforce HTML/SCSS parity: when markup is removed, remove its unused styling rules in the same change.
 
 ## Routing
 
