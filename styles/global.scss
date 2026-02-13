@@ -2,6 +2,7 @@
 @use "../components/header/header";
 @use "../components/category-grid/category-grid";
 @use "../components/category-card/category-card";
+@use "../components/solution-picker/solution-picker";
 
 :root {
   --header-height: 112px;

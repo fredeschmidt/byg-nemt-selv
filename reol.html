@@ -3,21 +3,60 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Byg Nemt Selv</title>
+    <title>Væg til væg reol | Byg Nemt Selv</title>
     <link rel="stylesheet" href="styles/global.css" />
   </head>
   <body>
     <header id="header">
       <img class="header-logo" src="images/logo.png" alt="Byg Nemt Selv logo" />
       <div class="header-inner">
-        <p class="header-subtitle">
-          <span class="header-subtitle__number">01</span> <span class="header-subtitle__highlight">Vælg møbeltype</span>
-        </p>
+        <h1 class="header-title">Væg til væg reol</h1>
+        <p class="header-subtitle"></p>
       </div>
     </header>
 
     <main>
-      
+      <section class="solution-picker" aria-labelledby="solution-picker-title">
+        <form>
+          <fieldset class="solution-picker__fieldset">
+            <legend id="solution-picker-title" class="solution-picker__legend"><span class="header-subtitle__number">01</span> Vælg reol</legend>
+            <ul class="solution-picker__list">
+              <li class="solution-picker__item">
+                <input class="solution-picker__radio" type="radio" name="solution-choice" id="solution-choice-1" checked />
+                <label class="solution-picker__card" for="solution-choice-1">
+                  <figure class="solution-picker__image-wrap">
+                    <img class="solution-picker__image" src="images/reol-doodle.png" alt="Skitse af klassisk væg-til-væg reol" />
+                  </figure>
+                  <h2 class="solution-picker__title">Klassisk modulreol</h2>
+                  <p class="solution-picker__meta">Mest opbevaring for pengene. God til kasser, bøger og hverdagsting.</p>
+                </label>
+              </li>
+
+              <li class="solution-picker__item">
+                <input class="solution-picker__radio" type="radio" name="solution-choice" id="solution-choice-2" />
+                <label class="solution-picker__card" for="solution-choice-2">
+                  <figure class="solution-picker__image-wrap">
+                    <img class="solution-picker__image" src="images/reol-doodle.png" alt="Skitse af reol med skabsmoduler nederst" />
+                  </figure>
+                  <h2 class="solution-picker__title">Reol + lukkede moduler</h2>
+                  <p class="solution-picker__meta">Roligt look. Lukkede felter nederst skjuler rod og gør oprydning hurtig.</p>
+                </label>
+              </li>
+
+              <li class="solution-picker__item">
+                <input class="solution-picker__radio" type="radio" name="solution-choice" id="solution-choice-3" />
+                <label class="solution-picker__card" for="solution-choice-3">
+                  <figure class="solution-picker__image-wrap">
+                    <img class="solution-picker__image" src="images/reol-doodle.png" alt="Skitse af asymmetrisk designreol" />
+                  </figure>
+                  <h2 class="solution-picker__title">Asymmetrisk designreol</h2>
+                  <p class="solution-picker__meta">Mere karakter og visuel rytme. God hvis reolen også skal være et statement.</p>
+                </label>
+              </li>
+            </ul>
+          </fieldset>
+        </form>
+      </section>
     </main>
   </body>
 </html>

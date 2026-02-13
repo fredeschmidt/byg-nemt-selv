@@ -17,6 +17,7 @@ Use this skill when creating or updating frontend pages in this project.
 6. Keep image assets in `images/`.
 7. Load `styles/global.css` in frontend pages.
 8. Follow mobile-first styling.
+9. When building new pages/components, use `index.html` as the primary visual reference and keep the same overall look-and-feel unless the user explicitly requests a different style.
 
 ## Semantic HTML Enforcement (Strict)
 
@@ -47,6 +48,7 @@ Use this skill when creating or updating frontend pages in this project.
 8. Keep formatting clean: logical groups, consistent spacing, consistent property order.
 9. Never manually edit `styles/global.css`. It is generated output.
 10. When removing HTML markup, remove the corresponding unused SCSS selectors and dead style rules in the same change.
+11. Prefer reusable, domain-neutral class names for new UI patterns so the same component classes can be reused across multiple pages.
 
 ## Design Tokens (Strict)
 

@@ -15,6 +15,8 @@ For page/component work, run this skill before editing files.
 - Enforce semantic HTML, mobile-first styling, and SCSS conventions.
 - Enforce global design tokens for fonts/font styling/colors via `:root` in `styles/global.scss`.
 - Enforce HTML/SCSS parity: when markup is removed, remove its unused styling rules in the same change.
+- Enforce visual consistency with `index.html` for new components/pages unless the user requests a different visual direction.
+- Enforce reusable class naming by default so new components can be reused across subpages.
 
 ## Routing
 
