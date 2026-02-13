@@ -69,11 +69,15 @@
   font-family: "Chicle", cursive;
   color: var(--color-text-primary);
   font-weight: var(--font-weight-bold);
-  line-height: 1;
-  font-size: 1.45em;
-  vertical-align: -0.08em;
+  line-height: 1.18;
+  font-size: 1.7em;
+  vertical-align: -0.1em;
 }
 
 .header-subtitle__highlight {
+  display: inline-block;
   color: var(--color-text-primary);
+  font-weight: var(--font-weight-semibold);
+  font-size: 1.12em;
+  line-height: 1.28;
 }
