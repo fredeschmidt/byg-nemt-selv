@@ -1,3 +1,31 @@
+@font-face {
+  font-family: "Roboto";
+  src: url("../fonts/Roboto-VariableFont_wdth,wght.ttf") format("truetype");
+  font-style: normal;
+  font-weight: 100 900;
+  font-display: swap;
+}
+@font-face {
+  font-family: "Roboto";
+  src: url("../fonts/Roboto-Italic-VariableFont_wdth,wght.ttf") format("truetype");
+  font-style: italic;
+  font-weight: 100 900;
+  font-display: swap;
+}
+@font-face {
+  font-family: "Orbitron";
+  src: url("../fonts/Orbitron-VariableFont_wght.ttf") format("truetype");
+  font-style: normal;
+  font-weight: 400 900;
+  font-display: swap;
+}
+@font-face {
+  font-family: "Chicle";
+  src: url("../fonts/Chicle-Regular.ttf") format("truetype");
+  font-style: normal;
+  font-weight: 400;
+  font-display: swap;
+}
 #header {
   position: relative;
   min-height: var(--header-height);
@@ -53,8 +81,6 @@
   font-size: 50px;
   letter-spacing: 0.02em;
   line-height: 1.05;
-  font-family: "Orbitron", sans-serif;
-  font-optical-sizing: auto;
   color: #000;
 }
 
@@ -89,15 +115,12 @@
   font-weight: 700;
   line-height: 1;
   font-size: 30px;
-  font-family: "Orbitron", sans-serif;
-  font-optical-sizing: auto;
 }
 .header-step__text {
   font-size: 13px;
   color: #111;
   line-height: 1.2;
   font-weight: 400;
-  font-family: "Roboto", sans-serif;
 }
 @media (min-width: 801px) {
   .header-step__text {
@@ -184,18 +207,6 @@
   pointer-events: auto;
 }
 
-.category-card--lille {
-  background-image: url("../../images/lille-entre.jpg");
-}
-
-.category-card--boerne {
-  background-image: url("../../images/bornefamilie.jpg");
-}
-
-.category-card--smal {
-  background-image: url("../../images/smal-gang.jpg");
-}
-
 .category-card__content {
   position: relative;
   z-index: 1;
@@ -222,7 +233,12 @@
   background: rgba(0, 0, 0, 0.28);
   font-size: clamp(1.2rem, 2vw, 1.9rem);
   font-weight: 400;
-  font-family: "Roboto", sans-serif;
+  transition: opacity 0.25s ease;
+}
+
+.category-card:hover .category-card__title,
+.category-card:focus-visible .category-card__title {
+  opacity: 0;
 }
 
 .category-card__description {
