@@ -6,7 +6,7 @@
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
     "scss:build": "sass styles/global.scss styles/global.css --style=expanded --no-error-css",
-    "scss:watch": "sass --watch styles/global.scss styles/global.css --style=expanded --no-error-css",
+    "scss:watch": "sass --watch --poll styles/global.scss:styles/global.css --style=expanded --no-error-css",
     "dev": "npm run scss:watch"
   },
   "repository": {
