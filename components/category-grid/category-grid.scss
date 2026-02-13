@@ -28,6 +28,7 @@
 .category-grid__item {
   display: flex;
   min-height: 200px;
+  border: 2px solid var(--color-text-primary);
 
   .category-card {
     flex: 1;
