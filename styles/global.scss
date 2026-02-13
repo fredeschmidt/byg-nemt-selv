@@ -25,3 +25,41 @@ body {
   background: #f4f1ea;
   color: #093FB4;
 }
+
+.simple-page__header {
+  min-height: 88px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 12px 16px;
+  background: #1f2833;
+}
+
+.simple-page__home-link {
+  color: #fff;
+  text-decoration: none;
+  font-size: 1.5rem;
+  font-weight: 700;
+}
+
+.simple-page__main {
+  max-width: 900px;
+  margin: 0 auto;
+  padding: 24px 20px;
+
+  h1 {
+    margin: 0 0 14px;
+    color: #1f2833;
+  }
+
+  p {
+    margin: 0 0 12px;
+    line-height: 1.5;
+    color: #1f2833;
+  }
+
+  a {
+    color: #1f2833;
+    font-weight: 700;
+  }
+}

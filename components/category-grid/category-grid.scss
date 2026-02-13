@@ -3,16 +3,33 @@
   max-width: 1200px;
   margin: 0 auto;
   padding: 14px;
-  min-height: calc(100vh - var(--header-height));
 
+  @media (min-width: 1001px) {
+    padding: 16px 20px 20px;
+  }
+}
+
+.category-grid__list {
+  margin: 0;
+  padding: 0;
+  list-style: none;
+  min-height: calc(100vh - var(--header-height));
   display: grid;
   grid-template-columns: 1fr;
   grid-template-rows: repeat(3, minmax(0, 1fr));
   gap: 16px;
 
   @media (min-width: 1001px) {
-    padding: 16px 20px 20px;
     grid-template-columns: repeat(3, minmax(0, 1fr));
     grid-template-rows: none;
+  }
+}
+
+.category-grid__item {
+  display: flex;
+  min-height: 200px;
+
+  .category-card {
+    flex: 1;
   }
 }
