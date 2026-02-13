@@ -126,6 +126,7 @@
   display: inline-flex;
   align-items: center;
   justify-content: center;
+  font-family: "Chicle", cursive;
   color: var(--color-text-primary);
   font-weight: var(--font-weight-bold);
   line-height: 1;
