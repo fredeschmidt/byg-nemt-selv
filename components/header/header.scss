@@ -45,13 +45,13 @@
 
 .header-title {
   margin: 0;
-  font-family: var(--font-family-header);
-  font-weight: var(--font-weight-semibold);
+  font-family: "Chicle", cursive;
+  font-weight: var(--font-weight-bold);
   font-style: normal;
   font-size: 52px;
   letter-spacing: 0.02em;
-  line-height: var(--line-height-tight);
-  color: var(--color-text-strong);
+  line-height: 1.18;
+  color: var(--color-text-primary);
 
   @media (min-width: 801px) {
     font-size: 72px;
@@ -106,4 +106,8 @@
   font-weight: var(--font-weight-semibold);
   font-size: 1.12em;
   line-height: 1.28;
+}
+
+.header-subtitle__small {
+  font-size: 0.85em;
 }
