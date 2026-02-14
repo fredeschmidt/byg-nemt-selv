@@ -17,6 +17,7 @@ For page/component work, run this skill before editing files.
 - Enforce HTML/SCSS parity: when markup is removed, remove its unused styling rules in the same change.
 - Enforce visual consistency with `index.html` for new components/pages unless the user requests a different visual direction.
 - Enforce reusable class naming by default so new components can be reused across subpages.
+- Enforce page-pair parity: `guide-xxxx.html` must always reflect and stay aligned with the current fields/options in its paired `xxxx.html`.
 
 ## Routing
 

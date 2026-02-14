@@ -63,6 +63,15 @@
             </legend>
 
             <section class="solution-picker__subsection">
+              <ul class="solution-picker__measure-list">
+                <li class="solution-picker__measure-item">
+                  <label class="solution-picker__field-label" for="customer-name">Navn</label>
+                  <input class="solution-picker__input" id="customer-name" name="customer_name" type="text" placeholder="Indtast dit navn" />
+                </li>
+              </ul>
+            </section>
+
+            <section class="solution-picker__subsection">
               <h3 id="placement-title" class="solution-picker__question">Hvor skal reolen stå?</h3>
               <ul class="solution-picker__choice-list">
                 <li>
@@ -88,11 +97,6 @@
 
             <section class="solution-picker__subsection">
               <ul class="solution-picker__measure-list">
-                <li class="solution-picker__measure-item">
-                  <label class="solution-picker__field-label" for="customer-name">Navn</label>
-                  <input class="solution-picker__input" id="customer-name" name="customer_name" type="text" placeholder="Indtast dit navn" />
-                </li>
-
                 <li class="solution-picker__measure-item">
                   <label class="solution-picker__field-label" for="wall-width">Bredde</label>
                   <input
@@ -139,35 +143,16 @@
                 </li>
 
                 <li class="solution-picker__measure-item">
-                  <label class="solution-picker__field-label" for="baseboard-depth">Sokkel-/fodliste dybde (valgfri)</label>
+                  <label class="solution-picker__field-label" for="baseboard-depth">Sokkel-/fodliste dybde</label>
                   <input class="solution-picker__input" id="baseboard-depth" name="baseboard_depth_cm" type="number" inputmode="numeric" min="0" placeholder="Indtast dybde i cm" />
                 </li>
               </ul>
             </section>
 
             <section class="solution-picker__subsection">
-              <h4 class="solution-picker__group-title">Loft og brug</h4>
-
               <div class="solution-picker__option-group">
-                <h5 class="solution-picker__group-title">Lofttype (valgfri)</h5>
-                <ul class="solution-picker__choice-list">
-                  <li>
-                    <label class="solution-picker__choice">
-                      <input type="radio" name="ceiling_type" value="flat" />
-                      <span>Fladt</span>
-                    </label>
-                  </li>
-                  <li>
-                    <label class="solution-picker__choice">
-                      <input type="radio" name="ceiling_type" value="sloped" />
-                      <span>Skråt</span>
-                    </label>
-                  </li>
-                </ul>
-              </div>
-
-              <div class="solution-picker__option-group">
-                <h5 class="solution-picker__group-title">Skal reolen gå helt til loft?</h5>
+                <h4 class="solution-picker__group-title">Skal reolen gå helt til loft?</h4>
+                <p id="tip-to-ceiling" class="solution-picker__tip">(Kun guides til fladt loft)</p>
                 <ul class="solution-picker__choice-list">
                   <li>
                     <label class="solution-picker__choice">
@@ -184,29 +169,6 @@
                 </ul>
               </div>
 
-              <div class="solution-picker__option-group">
-                <h5 class="solution-picker__group-title">Brug</h5>
-                <ul class="solution-picker__choice-list">
-                  <li>
-                    <label class="solution-picker__choice">
-                      <input type="radio" name="usage_type" value="books" />
-                      <span>Bøger</span>
-                    </label>
-                  </li>
-                  <li>
-                    <label class="solution-picker__choice">
-                      <input type="radio" name="usage_type" value="boxes" />
-                      <span>Kasser</span>
-                    </label>
-                  </li>
-                  <li>
-                    <label class="solution-picker__choice">
-                      <input type="radio" name="usage_type" value="mix" />
-                      <span>Mix</span>
-                    </label>
-                  </li>
-                </ul>
-              </div>
             </section>
 
             <section class="solution-picker__subsection">
@@ -288,69 +250,12 @@
                 </ul>
               </div>
             </section>
-          </fieldset>
-
-          <section class="solution-picker__fieldset solution-picker__fieldset--summary" aria-live="polite" aria-atomic="true">
-            <h2 class="solution-picker__legend">Opsummering af dine valg</h2>
-            <dl class="solution-picker__summary-list">
-              <div class="solution-picker__summary-item">
-                <dt>Reoltype</dt>
-                <dd id="summary-solution">Klassisk modulreol</dd>
-              </div>
-              <div class="solution-picker__summary-item">
-                <dt>Navn</dt>
-                <dd id="summary-name">Ikke udfyldt</dd>
-              </div>
-              <div class="solution-picker__summary-item">
-                <dt>Placering</dt>
-                <dd id="summary-placement">Ikke valgt endnu</dd>
-              </div>
-              <div class="solution-picker__summary-item">
-                <dt>Bredde</dt>
-                <dd id="summary-width">Ikke udfyldt</dd>
-              </div>
-              <div class="solution-picker__summary-item">
-                <dt>Højde</dt>
-                <dd id="summary-height">Ikke udfyldt</dd>
-              </div>
-              <div class="solution-picker__summary-item">
-                <dt>Dybde</dt>
-                <dd id="summary-depth">Ikke udfyldt</dd>
-              </div>
-              <div class="solution-picker__summary-item">
-                <dt>Sokkel/fodliste</dt>
-                <dd id="summary-baseboard">Ikke udfyldt</dd>
-              </div>
-              <div class="solution-picker__summary-item">
-                <dt>Vægtype</dt>
-                <dd id="summary-wall-type">Ikke valgt endnu</dd>
-              </div>
-              <div class="solution-picker__summary-item">
-                <dt>Lofttype</dt>
-                <dd id="summary-ceiling-type">Ikke valgt endnu</dd>
-              </div>
-              <div class="solution-picker__summary-item">
-                <dt>Helt til loft</dt>
-                <dd id="summary-to-ceiling">Ikke valgt endnu</dd>
-              </div>
-              <div class="solution-picker__summary-item">
-                <dt>Brug</dt>
-                <dd id="summary-usage">Ikke valgt endnu</dd>
-              </div>
-              <div class="solution-picker__summary-item">
-                <dt>Look og budget</dt>
-                <dd id="summary-finish-budget">Ikke valgt endnu</dd>
-              </div>
-              <div class="solution-picker__summary-item">
-                <dt>Overflade</dt>
-                <dd id="summary-finish-surface">Ikke valgt endnu</dd>
-              </div>
-            </dl>
 
             <div class="solution-picker__actions">
-              <button id="solution-next-button" class="solution-picker__next" type="submit" disabled>Næste</button>
+              <p id="solution-validation-error" class="solution-picker__validation-error" role="alert" hidden>du skal udfykde det hele før du kan komme videre</p>
+              <button id="solution-next-button" class="solution-picker__next" type="submit">Næste</button>
             </div>
-          </section>
+          </fieldset>
         </form>
       </section>
     </main>
@@ -358,75 +263,8 @@
       (() => {
         const form = document.getElementById("solution-form");
         if (!form) return;
-
-        const fallback = {
-          emptyChoice: "Ikke valgt endnu",
-          emptyInput: "Ikke udfyldt",
-        };
-
-        const summaryFields = {
-          solution: document.getElementById("summary-solution"),
-          placement: document.getElementById("summary-placement"),
-          name: document.getElementById("summary-name"),
-          width: document.getElementById("summary-width"),
-          height: document.getElementById("summary-height"),
-          depth: document.getElementById("summary-depth"),
-          baseboard: document.getElementById("summary-baseboard"),
-          wallType: document.getElementById("summary-wall-type"),
-          ceilingType: document.getElementById("summary-ceiling-type"),
-          toCeiling: document.getElementById("summary-to-ceiling"),
-          usage: document.getElementById("summary-usage"),
-          finishBudget: document.getElementById("summary-finish-budget"),
-          finishSurface: document.getElementById("summary-finish-surface"),
-        };
-        const nextButton = document.getElementById("solution-next-button");
-
-        const radioText = (name, fallbackText) => {
-          const checked = form.querySelector(`input[name="${name}"]:checked`);
-          if (!checked) return fallbackText;
-
-          const choiceLabel = checked.closest("label");
-          if (choiceLabel) {
-            const textNode = choiceLabel.querySelector("span");
-            if (textNode && textNode.textContent) return textNode.textContent.trim();
-          }
-
-          const solutionCard = form.querySelector(`label[for="${checked.id}"]`);
-          if (solutionCard) {
-            const title = solutionCard.querySelector(".solution-picker__title");
-            if (title && title.textContent) return title.textContent.trim();
-          }
-
-          return fallbackText;
-        };
-
-        const inputValue = (id) => {
-          const field = document.getElementById(id);
-          if (!field || !field.value.trim()) return fallback.emptyInput;
-          return `${field.value.trim()} cm`;
-        };
-
-        const textValue = (id) => {
-          const field = document.getElementById(id);
-          if (!field || !field.value.trim()) return fallback.emptyInput;
-          return field.value.trim();
-        };
-
-        const renderSummary = () => {
-          summaryFields.solution.textContent = radioText("solution_choice", fallback.emptyChoice);
-          summaryFields.name.textContent = textValue("customer-name");
-          summaryFields.placement.textContent = radioText("placement_choice", fallback.emptyChoice);
-          summaryFields.width.textContent = inputValue("wall-width");
-          summaryFields.height.textContent = inputValue("wall-height");
-          summaryFields.depth.textContent = inputValue("shelf-depth");
-          summaryFields.baseboard.textContent = inputValue("baseboard-depth");
-          summaryFields.wallType.textContent = radioText("wall_type", fallback.emptyChoice);
-          summaryFields.ceilingType.textContent = radioText("ceiling_type", fallback.emptyChoice);
-          summaryFields.toCeiling.textContent = radioText("to_ceiling", fallback.emptyChoice);
-          summaryFields.usage.textContent = radioText("usage_type", fallback.emptyChoice);
-          summaryFields.finishBudget.textContent = radioText("finish_budget", fallback.emptyChoice);
-          summaryFields.finishSurface.textContent = radioText("finish_surface", fallback.emptyChoice);
-        };
+        const validationError = document.getElementById("solution-validation-error");
+        let hasAttemptedSubmit = false;
 
         const hasChecked = (name) => Boolean(form.querySelector(`input[name="${name}"]:checked`));
 
@@ -435,6 +273,13 @@
           if (!field) return false;
           const value = Number(field.value);
           return Number.isFinite(value) && value > 0;
+        };
+
+        const hasNonNegativeInput = (id) => {
+          const field = document.getElementById(id);
+          if (!field || !field.value.trim()) return false;
+          const value = Number(field.value);
+          return Number.isFinite(value) && value >= 0;
         };
 
         const hasTextInput = (id) => {
@@ -450,31 +295,101 @@
             hasPositiveInput("wall-width") &&
             hasPositiveInput("wall-height") &&
             hasPositiveInput("shelf-depth") &&
+            hasNonNegativeInput("baseboard-depth") &&
             hasChecked("wall_type") &&
             hasChecked("to_ceiling") &&
-            hasChecked("usage_type") &&
             hasChecked("finish_budget") &&
             hasChecked("finish_surface")
           );
         };
 
-        const updateNextButton = () => {
-          if (!nextButton) return;
-          nextButton.disabled = !isComplete();
+        const clearInvalidMarkers = () => {
+          form.querySelectorAll(".is-invalid").forEach((node) => node.classList.remove("is-invalid"));
         };
 
-        form.addEventListener("input", renderSummary);
-        form.addEventListener("change", renderSummary);
-        form.addEventListener("input", updateNextButton);
-        form.addEventListener("change", updateNextButton);
+        const markInvalidFields = () => {
+          clearInvalidMarkers();
+          const missingNodes = [];
+
+          const requiredTextIds = ["customer-name"];
+          const requiredNumberIds = ["wall-width", "wall-height", "shelf-depth"];
+          const requiredNonNegativeIds = ["baseboard-depth"];
+          const requiredRadioNames = ["placement_choice", "wall_type", "to_ceiling", "finish_budget", "finish_surface"];
+
+          requiredTextIds.forEach((id) => {
+            if (!hasTextInput(id)) {
+              const field = document.getElementById(id);
+              if (field) {
+                field.classList.add("is-invalid");
+                missingNodes.push(field);
+              }
+            }
+          });
+
+          requiredNumberIds.forEach((id) => {
+            if (!hasPositiveInput(id)) {
+              const field = document.getElementById(id);
+              if (field) {
+                field.classList.add("is-invalid");
+                missingNodes.push(field);
+              }
+            }
+          });
+
+          requiredNonNegativeIds.forEach((id) => {
+            if (!hasNonNegativeInput(id)) {
+              const field = document.getElementById(id);
+              if (field) {
+                field.classList.add("is-invalid");
+                missingNodes.push(field);
+              }
+            }
+          });
+
+          requiredRadioNames.forEach((name) => {
+            if (!hasChecked(name)) {
+              const firstRadio = form.querySelector(`input[name="${name}"]`);
+              const group = firstRadio ? firstRadio.closest(".solution-picker__choice-list") : null;
+              if (group) {
+                group.classList.add("is-invalid");
+                missingNodes.push(firstRadio);
+              }
+            }
+          });
+
+          return missingNodes;
+        };
+
+        const hideError = () => {
+          if (!validationError) return;
+          validationError.hidden = true;
+        };
+
+        const updateValidationState = () => {
+          if (!hasAttemptedSubmit) return;
+          const missing = markInvalidFields();
+          if (missing.length === 0) {
+            hideError();
+          } else if (validationError) {
+            validationError.hidden = false;
+          }
+        };
+
+        form.addEventListener("input", updateValidationState);
+        form.addEventListener("change", updateValidationState);
         form.addEventListener("submit", (event) => {
           if (!isComplete()) {
             event.preventDefault();
+            hasAttemptedSubmit = true;
+            const missing = markInvalidFields();
+            if (validationError) {
+              validationError.hidden = false;
+            }
+            if (missing[0]) {
+              missing[0].focus();
+            }
           }
         });
-
-        renderSummary();
-        updateNextButton();
       })();
     </script>
   </body>

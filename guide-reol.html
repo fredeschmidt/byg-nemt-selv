@@ -33,10 +33,8 @@
             <li>Ønsket højde: <strong id="guide-height">-</strong></li>
             <li>Maks dybde: <strong id="guide-depth">-</strong></li>
             <li>Sokkel-/fodliste dybde (hvis der er): <strong id="guide-baseboard">-</strong> (valgfri)</li>
-            <li>Lofttype: <strong id="guide-ceiling-type">-</strong> (valgfri)</li>
             <li>Vægtype: <strong id="guide-wall-type">-</strong></li>
             <li>Skal reolen gå helt til loft? <strong id="guide-to-ceiling">-</strong></li>
-            <li>Brug: <strong id="guide-usage">-</strong></li>
           </ul>
           <p>
             <strong>Vores tilpasning:</strong> Hvis det er væg-til-væg, fratrækker vi automatisk
@@ -65,7 +63,7 @@
             <li>Højde: <strong id="guide-height-2">-</strong></li>
             <li>Dybde: <strong id="guide-depth-2">-</strong></li>
           </ul>
-          <p>Hyldeafstand (anbefalet ud fra "brug"): <strong id="guide-spacing">-</strong></p>
+          <p>Hyldeafstand (anbefalet): <strong id="guide-spacing">-</strong></p>
           <p>Antal hylder: <strong id="guide-shelf-count">-</strong></p>
         </section>
 
@@ -183,9 +181,7 @@
             c: "Løsning C - Asymmetrisk designreol",
           },
           wall_type: { gypsum: "Gips", brick: "Mursten", concrete: "Beton", unknown: "Ved ikke" },
-          ceiling_type: { flat: "Fladt", sloped: "Skråt" },
           to_ceiling: { yes: "Ja", no: "Nej" },
-          usage_type: { books: "Bøger", boxes: "Kasser", mix: "Mix" },
           finish_budget: { budget: "Budget", standard: "Standard", premium: "Premium" },
         };
 
@@ -199,10 +195,8 @@
         const widthDeduction = betweenWalls && width ? 0.8 : 0;
         const adjustedWidth = width ? Math.max(width - widthDeduction, 0) : null;
 
-        const usage = value("usage_type");
-        const spacingLabel =
-          usage === "books" ? "Bøger: 28-32 cm mellem hylder" : usage === "boxes" ? "Kasser: 32-38 cm mellem hylder" : "Mix: 30-35 cm";
-        const avgSpacing = usage === "books" ? 30 : usage === "boxes" ? 35 : 32.5;
+        const spacingLabel = "30-35 cm mellem hylder";
+        const avgSpacing = 32.5;
         const shelfCount = height ? Math.max(3, Math.round(height / avgSpacing) - 1) : null;
 
         const budget = value("finish_budget");
@@ -244,11 +238,9 @@
         setText("guide-height", cm(height));
         setText("guide-depth", cm(depth));
         setText("guide-baseboard", baseboard ? cm(baseboard) : "Ikke angivet");
-        setText("guide-ceiling-type", pick("ceiling_type", "Ikke angivet"));
         setText("guide-wall-type", pick("wall_type"));
         setText("guide-wall-type-2", pick("wall_type").toLowerCase());
         setText("guide-to-ceiling", pick("to_ceiling"));
-        setText("guide-usage", pick("usage_type"));
         setText("guide-adjustment", betweenWalls ? "0,5-1,0 cm" : "0,0 cm");
 
         setText("guide-shelf-count-inline", shelfCount ? String(shelfCount) : "-");
