@@ -259,6 +259,16 @@
   text-align: right;
 }
 
+.solution-picker__step-label {
+  margin: 0;
+  color: var(--color-text-default);
+  font-weight: var(--font-weight-semibold);
+}
+
+.solution-picker__step-icon {
+  margin-left: 4px;
+}
+
 .solution-picker__next {
   border: 2px solid var(--color-text-primary);
   background: var(--color-text-primary);
@@ -267,4 +277,19 @@
   font-weight: var(--font-weight-semibold);
   padding: 10px 20px;
   cursor: pointer;
+  transition: transform 0.18s ease;
+
+  &:hover {
+    transform: scale(1.04);
+  }
+
+  &:hover .solution-picker__next-icon {
+    transform: translateX(4px);
+  }
+}
+
+.solution-picker__next-icon {
+  display: inline-block;
+  margin-left: 4px;
+  transition: transform 0.18s ease;
 }
