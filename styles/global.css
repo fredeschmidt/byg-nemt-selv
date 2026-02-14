@@ -375,7 +375,8 @@
   border: 3px solid var(--color-text-primary);
   border-radius: 14px;
   overflow: hidden;
-  background: var(--color-text-inverse);
+  background: rgba(255, 255, 255, 0.92);
+  box-shadow: 0 8px 18px rgba(9, 63, 180, 0.1);
 }
 .product-detail__media img {
   display: block;
@@ -386,6 +387,7 @@
 
 .product-carousel {
   position: relative;
+  border-bottom: 2px solid rgba(9, 63, 180, 0.18);
 }
 
 .product-carousel__nav {
@@ -396,7 +398,7 @@
   height: 42px;
   border: 2px solid var(--color-text-primary);
   border-radius: 999px;
-  background: rgba(255, 255, 255, 0.92);
+  background: rgba(255, 255, 255, 0.95);
   color: var(--color-text-primary);
   font-size: 0;
   font-weight: var(--font-weight-bold);
@@ -405,13 +407,13 @@
   display: inline-flex;
   align-items: center;
   justify-content: center;
-  box-shadow: 0 6px 16px rgba(9, 63, 180, 0.2);
+  box-shadow: 0 4px 10px rgba(9, 63, 180, 0.16);
   transition: transform 0.18s ease, background 0.18s ease, box-shadow 0.18s ease;
 }
 .product-carousel__nav:hover {
   transform: translateY(-50%) scale(1.06);
   background: var(--color-text-inverse);
-  box-shadow: 0 8px 20px rgba(9, 63, 180, 0.3);
+  box-shadow: 0 7px 16px rgba(9, 63, 180, 0.22);
 }
 .product-carousel__nav:focus-visible {
   outline: none;
@@ -439,21 +441,30 @@
 
 .product-carousel__thumbs {
   margin: 0;
-  padding: 8px;
-  border-top: 1px solid rgba(31, 40, 51, 0.15);
+  padding: 10px;
+  border-top: 1px solid rgba(9, 63, 180, 0.18);
   display: grid;
   grid-template-columns: repeat(4, minmax(0, 1fr));
   gap: 8px;
+  background: rgba(255, 255, 255, 0.85);
 }
 
 .product-carousel__thumb {
-  border: 2px solid rgba(31, 40, 51, 0.2);
+  border: 2px solid rgba(9, 63, 180, 0.2);
+  border-radius: 8px;
   background: transparent;
   padding: 0;
   cursor: pointer;
+  overflow: hidden;
+  transition: transform 0.15s ease, border-color 0.15s ease, box-shadow 0.15s ease;
+}
+.product-carousel__thumb:hover {
+  transform: translateY(-1px);
+  border-color: rgba(9, 63, 180, 0.45);
 }
 .product-carousel__thumb.is-active {
   border-color: var(--color-text-primary);
+  box-shadow: 0 0 0 2px rgba(9, 63, 180, 0.14);
 }
 .product-carousel__thumb img {
   width: 100%;
