@@ -23,18 +23,16 @@
       <section class="category-filter" aria-label="Filtrér og sorter kategorier">
         <form class="category-filter__form" id="category-filter-form">
           <label class="category-filter__field">
-            <span class="category-filter__label">Sværhedsgrad</span>
-            <select id="filter-level" name="filter_level">
-              <option value="all">Alle</option>
+            <select id="filter-level" name="filter_level" aria-label="Filtrér på sværhedsgrad">
+              <option value="all">Sværhedsgrad: Alle</option>
               <option value="ikea-nemt">IKEA-nemt</option>
               <option value="svaert">Svært</option>
             </select>
           </label>
 
           <label class="category-filter__field">
-            <span class="category-filter__label">Tid</span>
-            <select id="filter-time" name="filter_time">
-              <option value="all">Alle</option>
+            <select id="filter-time" name="filter_time" aria-label="Filtrér på tid">
+              <option value="all">Tid: Alle</option>
               <option value="day">1 dag</option>
               <option value="weekend">1 weekend</option>
             </select>
