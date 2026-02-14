@@ -18,7 +18,7 @@
 
     <main>
       <section class="solution-picker">
-        <form>
+        <form id="solution-form" action="guide.html" method="get" novalidate>
           <fieldset class="solution-picker__fieldset">
             <legend id="solution-picker-title" class="solution-picker__legend"><span class="header-subtitle__number">01</span> Vælg reol</legend>
             <ul class="solution-picker__list">
@@ -37,7 +37,7 @@
                 <input class="solution-picker__radio" type="radio" name="solution_choice" id="solution-choice-2" />
                 <label class="solution-picker__card" for="solution-choice-2">
                   <figure class="solution-picker__image-wrap">
-                    <img class="solution-picker__image" src="images/reol-doodle.png" alt="Skitse af reol med skabsmoduler nederst" />
+                    <img class="solution-picker__image" src="images/reol-door-doodle.png" alt="Skitse af reol med skabsmoduler nederst" />
                   </figure>
                   <p class="solution-picker__title">Reol + lukkede moduler</p>
                 </label>
@@ -215,8 +215,149 @@
               </div>
             </section>
           </fieldset>
+
+          <section class="solution-picker__fieldset solution-picker__fieldset--summary" aria-live="polite" aria-atomic="true">
+            <h2 class="solution-picker__legend">Opsummering af dine valg</h2>
+            <dl class="solution-picker__summary-list">
+              <div class="solution-picker__summary-item">
+                <dt>Reoltype</dt>
+                <dd id="summary-solution">Klassisk modulreol</dd>
+              </div>
+              <div class="solution-picker__summary-item">
+                <dt>Placering</dt>
+                <dd id="summary-placement">Ikke valgt endnu</dd>
+              </div>
+              <div class="solution-picker__summary-item">
+                <dt>Bredde</dt>
+                <dd id="summary-width">Ikke udfyldt</dd>
+              </div>
+              <div class="solution-picker__summary-item">
+                <dt>Højde</dt>
+                <dd id="summary-height">Ikke udfyldt</dd>
+              </div>
+              <div class="solution-picker__summary-item">
+                <dt>Dybde</dt>
+                <dd id="summary-depth">Ikke udfyldt</dd>
+              </div>
+              <div class="solution-picker__summary-item">
+                <dt>Vægtype</dt>
+                <dd id="summary-wall-type">Ikke valgt endnu</dd>
+              </div>
+              <div class="solution-picker__summary-item">
+                <dt>Look og budget</dt>
+                <dd id="summary-finish-budget">Ikke valgt endnu</dd>
+              </div>
+              <div class="solution-picker__summary-item">
+                <dt>Overflade</dt>
+                <dd id="summary-finish-surface">Ikke valgt endnu</dd>
+              </div>
+            </dl>
+
+            <div class="solution-picker__actions">
+              <button id="solution-next-button" class="solution-picker__next" type="submit" disabled>Næste</button>
+            </div>
+          </section>
         </form>
       </section>
     </main>
+    <script>
+      (() => {
+        const form = document.getElementById("solution-form");
+        if (!form) return;
+
+        const fallback = {
+          emptyChoice: "Ikke valgt endnu",
+          emptyInput: "Ikke udfyldt",
+        };
+
+        const summaryFields = {
+          solution: document.getElementById("summary-solution"),
+          placement: document.getElementById("summary-placement"),
+          width: document.getElementById("summary-width"),
+          height: document.getElementById("summary-height"),
+          depth: document.getElementById("summary-depth"),
+          wallType: document.getElementById("summary-wall-type"),
+          finishBudget: document.getElementById("summary-finish-budget"),
+          finishSurface: document.getElementById("summary-finish-surface"),
+        };
+        const nextButton = document.getElementById("solution-next-button");
+
+        const radioText = (name, fallbackText) => {
+          const checked = form.querySelector(`input[name="${name}"]:checked`);
+          if (!checked) return fallbackText;
+
+          const choiceLabel = checked.closest("label");
+          if (choiceLabel) {
+            const textNode = choiceLabel.querySelector("span");
+            if (textNode && textNode.textContent) return textNode.textContent.trim();
+          }
+
+          const solutionCard = form.querySelector(`label[for="${checked.id}"]`);
+          if (solutionCard) {
+            const title = solutionCard.querySelector(".solution-picker__title");
+            if (title && title.textContent) return title.textContent.trim();
+          }
+
+          return fallbackText;
+        };
+
+        const inputValue = (id) => {
+          const field = document.getElementById(id);
+          if (!field || !field.value.trim()) return fallback.emptyInput;
+          return `${field.value.trim()} cm`;
+        };
+
+        const renderSummary = () => {
+          summaryFields.solution.textContent = radioText("solution_choice", fallback.emptyChoice);
+          summaryFields.placement.textContent = radioText("placement_choice", fallback.emptyChoice);
+          summaryFields.width.textContent = inputValue("wall-width");
+          summaryFields.height.textContent = inputValue("wall-height");
+          summaryFields.depth.textContent = inputValue("shelf-depth");
+          summaryFields.wallType.textContent = radioText("wall_type", fallback.emptyChoice);
+          summaryFields.finishBudget.textContent = radioText("finish_budget", fallback.emptyChoice);
+          summaryFields.finishSurface.textContent = radioText("finish_surface", fallback.emptyChoice);
+        };
+
+        const hasChecked = (name) => Boolean(form.querySelector(`input[name="${name}"]:checked`));
+
+        const hasPositiveInput = (id) => {
+          const field = document.getElementById(id);
+          if (!field) return false;
+          const value = Number(field.value);
+          return Number.isFinite(value) && value > 0;
+        };
+
+        const isComplete = () => {
+          return (
+            hasChecked("solution_choice") &&
+            hasChecked("placement_choice") &&
+            hasPositiveInput("wall-width") &&
+            hasPositiveInput("wall-height") &&
+            hasPositiveInput("shelf-depth") &&
+            hasChecked("wall_type") &&
+            hasChecked("finish_budget") &&
+            hasChecked("finish_surface")
+          );
+        };
+
+        const updateNextButton = () => {
+          if (!nextButton) return;
+          nextButton.disabled = !isComplete();
+        };
+
+        form.addEventListener("input", renderSummary);
+        form.addEventListener("change", renderSummary);
+        form.addEventListener("input", updateNextButton);
+        form.addEventListener("change", updateNextButton);
+        form.addEventListener("submit", (event) => {
+          if (!isComplete()) {
+            event.preventDefault();
+          }
+        });
+
+        renderSummary();
+        updateNextButton();
+      })();
+    </script>
   </body>
 </html>
