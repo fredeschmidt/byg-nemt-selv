@@ -13,45 +13,44 @@
       </a>
       <div class="header-inner">
         <h1 class="header-title">Væg til væg reol</h1>
-        <p class="header-subtitle"></p>
       </div>
     </header>
 
     <main>
-      <section class="solution-picker" aria-labelledby="solution-picker-title">
+      <section class="solution-picker">
         <form>
           <fieldset class="solution-picker__fieldset">
             <legend id="solution-picker-title" class="solution-picker__legend"><span class="header-subtitle__number">01</span> Vælg reol</legend>
             <ul class="solution-picker__list">
               <li class="solution-picker__item">
-                <input class="solution-picker__radio" type="radio" name="solution-choice" id="solution-choice-1" checked />
+                <input class="solution-picker__radio" type="radio" name="solution_choice" id="solution-choice-1" checked />
                 <label class="solution-picker__card" for="solution-choice-1">
                   <figure class="solution-picker__image-wrap">
                     <img class="solution-picker__image" src="images/reol-doodle.png" alt="Skitse af klassisk væg-til-væg reol" />
                   </figure>
-                  <h2 class="solution-picker__title">Klassisk modulreol</h2>
+                  <p class="solution-picker__title">Klassisk modulreol</p>
                 </label>
                 <p class="solution-picker__meta">Mest opbevaring for pengene. God til kasser, bøger og hverdagsting.</p>
               </li>
 
               <li class="solution-picker__item">
-                <input class="solution-picker__radio" type="radio" name="solution-choice" id="solution-choice-2" />
+                <input class="solution-picker__radio" type="radio" name="solution_choice" id="solution-choice-2" />
                 <label class="solution-picker__card" for="solution-choice-2">
                   <figure class="solution-picker__image-wrap">
                     <img class="solution-picker__image" src="images/reol-doodle.png" alt="Skitse af reol med skabsmoduler nederst" />
                   </figure>
-                  <h2 class="solution-picker__title">Reol + lukkede moduler</h2>
+                  <p class="solution-picker__title">Reol + lukkede moduler</p>
                 </label>
                 <p class="solution-picker__meta">Roligt look. Lukkede felter nederst skjuler rod og gør oprydning hurtig.</p>
               </li>
 
               <li class="solution-picker__item">
-                <input class="solution-picker__radio" type="radio" name="solution-choice" id="solution-choice-3" />
+                <input class="solution-picker__radio" type="radio" name="solution_choice" id="solution-choice-3" />
                 <label class="solution-picker__card" for="solution-choice-3">
                   <figure class="solution-picker__image-wrap">
                     <img class="solution-picker__image" src="images/reol-doodle.png" alt="Skitse af asymmetrisk designreol" />
                   </figure>
-                  <h2 class="solution-picker__title">Asymmetrisk designreol</h2>
+                  <p class="solution-picker__title">Asymmetrisk designreol</p>
                 </label>
                 <p class="solution-picker__meta">Mere karakter og visuel rytme. God hvis reolen også skal være et statement.</p>
               </li>
@@ -63,8 +62,8 @@
               <span class="header-subtitle__number">02</span> Indtast mål og ønsker
             </legend>
 
-            <section class="solution-picker__subsection" aria-labelledby="placement-title">
-              <p class="solution-picker__question">Hvor skal reolen stå?</p>
+            <section class="solution-picker__subsection">
+              <h3 id="placement-title" class="solution-picker__question">Hvor skal reolen stå?</h3>
               <ul class="solution-picker__choice-list">
                 <li>
                   <label class="solution-picker__choice">
@@ -87,115 +86,134 @@
               </ul>
             </section>
 
-            <section class="solution-picker__subsection" aria-labelledby="measure-title">
-              <ol class="solution-picker__measure-list">
+            <section class="solution-picker__subsection">
+              <ul class="solution-picker__measure-list">
                 <li class="solution-picker__measure-item">
-                  <p class="solution-picker__question">Bredde</p>
-                  <p class="solution-picker__measure-question">
-                    <label for="wall-width" class="visually-hidden">Hvor bred må reolen maks være (cm)</label>
-                    <input id="wall-width" name="wall_width_cm" type="number" inputmode="numeric" min="1" placeholder="Indtast bredde i cm" />
-                  </p>
-                  <p class="solution-picker__tip">Tip: hvis den står mellem to vægge, trækker vi automatisk 0,5-1 cm fra, så den passer.</p>
+                  <label class="solution-picker__field-label" for="wall-width">Bredde</label>
+                  <input
+                    class="solution-picker__input"
+                    id="wall-width"
+                    name="wall_width_cm"
+                    type="number"
+                    inputmode="numeric"
+                    min="1"
+                    placeholder="Indtast bredde i cm"
+                    aria-describedby="tip-wall-width"
+                  />
+                  <p id="tip-wall-width" class="solution-picker__tip">Tip: hvis den står mellem to vægge, trækker vi automatisk 0,5-1 cm fra, så den passer.</p>
                 </li>
 
                 <li class="solution-picker__measure-item">
-                  <p class="solution-picker__question">Højde</p>
-                  <p class="solution-picker__measure-question">
-                    <label for="wall-height" class="visually-hidden">Hvor høj vil du have den (cm)</label>
-                    <input id="wall-height" name="wall_height_cm" type="number" inputmode="numeric" min="1" placeholder="Indtast højde i cm" />
-                  </p>
-                  <p class="solution-picker__tip">Tip: fuld højde eller fx 200 cm?</p>
+                  <label class="solution-picker__field-label" for="wall-height">Højde</label>
+                  <input
+                    class="solution-picker__input"
+                    id="wall-height"
+                    name="wall_height_cm"
+                    type="number"
+                    inputmode="numeric"
+                    min="1"
+                    placeholder="Indtast højde i cm"
+                    aria-describedby="tip-wall-height"
+                  />
+                  <p id="tip-wall-height" class="solution-picker__tip">Tip: fuld højde eller fx 200 cm?</p>
                 </li>
 
                 <li class="solution-picker__measure-item">
-                  <p class="solution-picker__question">Dybde</p>
-                  <p class="solution-picker__measure-question">
-                    <label for="shelf-depth" class="visually-hidden">Hvor dyb må den være (cm)</label>
-                    <input id="shelf-depth" name="shelf_depth_cm" type="number" inputmode="numeric" min="1" placeholder="Indtast dybde i cm" />
-                  </p>
-                  <p class="solution-picker__tip">Tip: 25-30 cm til bøger, 35-40 cm til kasser.</p>
+                  <label class="solution-picker__field-label" for="shelf-depth">Dybde</label>
+                  <input
+                    class="solution-picker__input"
+                    id="shelf-depth"
+                    name="shelf_depth_cm"
+                    type="number"
+                    inputmode="numeric"
+                    min="1"
+                    placeholder="Indtast dybde i cm"
+                    aria-describedby="tip-shelf-depth"
+                  />
+                  <p id="tip-shelf-depth" class="solution-picker__tip">Tip: 25-30 cm til bøger, 35-40 cm til kasser.</p>
                 </li>
-              </ol>
+              </ul>
             </section>
 
-            <section class="solution-picker__subsection" aria-labelledby="wall-type">
-              <p class="solution-picker__question">Hvilken væg skal den fastgøres til?</p>
+            <section class="solution-picker__subsection">
+              <h4 id="wall-type-title" class="solution-picker__group-title">Hvilken væg skal den fastgøres til?</h4>
               <ul class="solution-picker__choice-list">
                 <li>
                   <label class="solution-picker__choice">
-                    <input type="radio" name="wall_type" value="gips" />
+                    <input type="radio" name="wall_type" value="gypsum" />
                     <span>Gips</span>
                   </label>
                 </li>
                 <li>
                   <label class="solution-picker__choice">
-                    <input type="radio" name="wall_type" value="mursten" />
+                    <input type="radio" name="wall_type" value="brick" />
                     <span>Mursten</span>
                   </label>
                 </li>
                 <li>
                   <label class="solution-picker__choice">
-                    <input type="radio" name="wall_type" value="beton" />
+                    <input type="radio" name="wall_type" value="concrete" />
                     <span>Beton</span>
                   </label>
                 </li>
                 <li>
                   <label class="solution-picker__choice">
-                    <input type="radio" name="wall_type" value="ved-ikke" />
+                    <input type="radio" name="wall_type" value="unknown" />
                     <span>Ved ikke</span>
                   </label>
                 </li>
               </ul>
             </section>
 
-            <section class="solution-picker__subsection" aria-labelledby="budget">
-              <p class="solution-picker__question">Look og budget</p>
-              <ul class="solution-picker__choice-list">
-                <li>
-                  <label class="solution-picker__choice">
-                    <input type="radio" name="finish_budget" value="budget" />
-                    <span>Budget (byggemarked, nemt)</span>
-                  </label>
-                </li>
-                <li>
-                  <label class="solution-picker__choice">
-                    <input type="radio" name="finish_budget" value="standard" />
-                    <span>Standard (pænt + solidt)</span>
-                  </label>
-                </li>
-                <li>
-                  <label class="solution-picker__choice">
-                    <input type="radio" name="finish_budget" value="premium" />
-                    <span>Premium (lækker finish)</span>
-                  </label>
-                </li>
-              </ul>
-            </section>
+            <section class="solution-picker__subsection">
+              <div class="solution-picker__option-group">
+                <h4 id="finish-budget-title" class="solution-picker__group-title">Look og budget</h4>
+                <ul class="solution-picker__choice-list">
+                  <li>
+                    <label class="solution-picker__choice">
+                      <input type="radio" name="finish_budget" value="budget" />
+                      <span>Budget (byggemarked, nemt)</span>
+                    </label>
+                  </li>
+                  <li>
+                    <label class="solution-picker__choice">
+                      <input type="radio" name="finish_budget" value="standard" />
+                      <span>Standard (pænt + solidt)</span>
+                    </label>
+                  </li>
+                  <li>
+                    <label class="solution-picker__choice">
+                      <input type="radio" name="finish_budget" value="premium" />
+                      <span>Premium (lækker finish)</span>
+                    </label>
+                  </li>
+                </ul>
+              </div>
 
-            <section class="solution-picker__subsection" aria-labelledby="overflade"></section>
-              <p class="solution-picker__question">Overflade</p>
-              <ul class="solution-picker__choice-list">
-                <li>
-                  <label class="solution-picker__choice">
-                    <input type="radio" name="finish_surface" value="natural-wood" />
-                    <span>Natur træ</span>
-                  </label>
-                </li>
-                <li>
-                  <label class="solution-picker__choice">
-                    <input type="radio" name="finish_surface" value="painted" />
-                    <span>Malet</span>
-                  </label>
-                </li>
-                <li>
-                  <label class="solution-picker__choice">
-                    <input type="radio" name="finish_surface" value="decide-later" />
-                    <span>Jeg beslutter senere</span>
-                  </label>
-                </li>
-              </ul>
+              <div class="solution-picker__option-group">
+                <h4 id="finish-surface-title" class="solution-picker__group-title">Overflade</h4>
+                <ul class="solution-picker__choice-list">
+                  <li>
+                    <label class="solution-picker__choice">
+                      <input type="radio" name="finish_surface" value="natural-wood" />
+                      <span>Natur træ</span>
+                    </label>
+                  </li>
+                  <li>
+                    <label class="solution-picker__choice">
+                      <input type="radio" name="finish_surface" value="painted" />
+                      <span>Malet</span>
+                    </label>
+                  </li>
+                  <li>
+                    <label class="solution-picker__choice">
+                      <input type="radio" name="finish_surface" value="decide-later" />
+                      <span>Jeg beslutter senere</span>
+                    </label>
+                  </li>
+                </ul>
+              </div>
             </section>
-
           </fieldset>
         </form>
       </section>
