@@ -58,18 +58,6 @@
   }
 }
 
-.header-tagline {
-  margin: 0;
-  font-size: 22px;
-  line-height: 1.25;
-  font-weight: var(--font-weight-semibold);
-  color: var(--color-text-strong);
-
-  @media (min-width: 801px) {
-    font-size: 30px;
-  }
-}
-
 .header-subtitle {
   margin: 0;
   font-size: 17px;

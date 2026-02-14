@@ -11,35 +11,70 @@
       <img class="header-logo" src="images/logo.png" alt="Byg Nemt Selv logo" />
       <div class="header-inner">
         <h1 class="header-title">Møbelopskrifter</h1>
-        <h2 class="header-tagline">Byg selv på én enkel weekend</h2>
         <p class="header-subtitle">
           Hvis du kan samle IKEA, kan du også bygge dit eget møbel fra <i>Byg Nemt Selv.</i><br>
-          <span class="header-subtitle__step"><span class="header-subtitle__number">01</span> <span class="header-subtitle__highlight">Vælg møbeltype</span></span>
-          <span class="header-subtitle__step"><span class="header-subtitle__number">02</span> <span class="header-subtitle__highlight">Indtast dine mål</span></span>
-          <span class="header-subtitle__step"><span class="header-subtitle__number">03</span> <span class="header-subtitle__highlight">Få en simpel byggeguide</span></span><br>
+          <span class="header-subtitle__step"><span class="header-subtitle__number">Vælg dit møbel</span> <span class="header-subtitle__highlight">og få en ultra simpel byggeguide</span></span><br>
           - inkludere materialeliste (produktnavne + mængder), direkte links til hvor du køber det hele, og en trin-for-trin byggeplan, der kan klares med det værktøj du allerede har derhjemme.
         </p>
       </div>
     </header>
 
     <main>
-      <section class="start-cta" aria-label="Start">
-        <a class="start-cta__button" href="category.html">KOM IGANG</a>
-      </section>
+      <nav id="category-grid" aria-label="Vælg møbeltype">
+        <ul class="category-grid__list">
+          <li class="category-grid__item">
+            <a class="category-card" href="kasse.html" style="background-image: url('../../images/qubik.jpg');">
+              <div class="category-card__content">
+                <h2 class="category-card__title">Kasse</h2>
+                <ul class="category-card__facts" aria-label="Nøgleinformation">
+                  <li><strong>Tid:</strong> 1 dag</li>
+                  <li><strong>Niveau:</strong> IKEA-nemt</li>
+                  <li><strong>Pris:</strong> fra 199 kr.</li>
+                </ul>
+              </div>
+            </a>
+          </li>
 
-      <section class="how-to-video" aria-label="Sådan gør du">
-        <h2 class="how-to-video__title">Se hvordan det fungere her</h2>
-        <div class="how-to-video__frame">
-          <iframe
-            src="https://www.youtube.com/embed/eAJKusHRF2E"
-            title="Byg Nemt Selv - how to video"
-            loading="lazy"
-            allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
-            referrerpolicy="strict-origin-when-cross-origin"
-            allowfullscreen
-          ></iframe>
-        </div>
-      </section>
+          <li class="category-grid__item">
+            <a class="category-card" href="rullekommode.html" style="background-image: url('../../images/rullekommode.jpg');">
+              <div class="category-card__content">
+                <h2 class="category-card__title">Bænk med opbevaring</h2>
+                <ul class="category-card__facts" aria-label="Nøgleinformation">
+                  <li><strong>Tid:</strong> 1 weekend</li>
+                  <li><strong>Niveau:</strong> IKEA-nemt</li>
+                  <li><strong>Pris:</strong> fra 199 kr.</li>
+                </ul>
+              </div>
+            </a>
+          </li>
+
+          <li class="category-grid__item">
+            <a class="category-card" href="smal-opbevaring.html" style="background-image: url('../../images/smal-opbevaring.jpg');">
+              <div class="category-card__content">
+                <h2 class="category-card__title">Smal opbevaring</h2>
+                <ul class="category-card__facts" aria-label="Nøgleinformation">
+                  <li><strong>Tid:</strong> 1 weekend</li>
+                  <li><strong>Niveau:</strong> IKEA-nemt</li>
+                  <li><strong>Pris:</strong> fra 199 kr.</li>
+                </ul>
+              </div>
+            </a>
+          </li>
+
+          <li class="category-grid__item">
+            <a class="category-card" href="slagbank.html" style="background-image: url('../../images/slagbank.jpg');">
+              <div class="category-card__content">
+                <h2 class="category-card__title">Slagbænk</h2>
+                <ul class="category-card__facts" aria-label="Nøgleinformation">
+                  <li><strong>Tid:</strong> 1 weekend</li>
+                  <li><strong>Niveau:</strong> IKEA-nemt</li>
+                  <li><strong>Pris:</strong> fra 199 kr.</li>
+                </ul>
+              </div>
+            </a>
+          </li>
+        </ul>
+      </nav>
     </main>
   </body>
 </html>
