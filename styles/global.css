@@ -302,8 +302,14 @@
 
 .solution-picker__fieldset {
   margin: 0;
-  padding: 0;
-  border: 0;
+  padding: 16px;
+  background: var(--color-text-inverse);
+  border: 1px solid var(--color-text-neutral);
+}
+@media (min-width: 801px) {
+  .solution-picker__fieldset {
+    padding: 20px;
+  }
 }
 
 .solution-picker__fieldset--measure {
