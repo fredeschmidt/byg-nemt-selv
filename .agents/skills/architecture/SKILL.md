@@ -49,6 +49,7 @@ Use this skill when creating or updating frontend pages in this project.
 9. Never manually edit `styles/global.css`. It is generated output.
 10. When removing HTML markup, remove the corresponding unused SCSS selectors and dead style rules in the same change.
 11. Prefer reusable, domain-neutral class names for new UI patterns so the same component classes can be reused across multiple pages.
+12. Enforce form-to-guide parity: for any `guide-xxxx.html`, the referenced fields/content must always match the active input/options in the corresponding `xxxx.html` page.
 
 ## Design Tokens (Strict)
 
@@ -80,3 +81,4 @@ Example `styles/global.scss` imports:
 5. Validate semantic structure before finalizing.
 6. Validate mobile behavior before desktop behavior.
 7. Rebuild styles before finalizing: `npm run scss:build`.
+8. If a paired form/guide page exists (`xxxx.html` + `guide-xxxx.html`), update both in the same change when fields/options are added, removed, or renamed.
