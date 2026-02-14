@@ -36,7 +36,7 @@
   display: grid;
   justify-items: center;
   gap: 24px;
-  margin-top: 84px;
+  margin-top: 45px;
   @media (min-width: 801px) {
     gap: 30px;
     margin-top: 36px;
@@ -48,19 +48,35 @@
   font-family: var(--font-family-header);
   font-weight: var(--font-weight-semibold);
   font-style: normal;
-  font-size: 72px;
+  font-size: 52px;
   letter-spacing: 0.02em;
   line-height: var(--line-height-tight);
   color: var(--color-text-strong);
+
+  @media (min-width: 801px) {
+    font-size: 72px;
+  }
 }
 
 .header-subtitle {
   margin: 0;
-  font-size: 22px;
+  font-size: 17px;
   line-height: 1.45;
   font-weight: 300;
   color: var(--color-text-strong);
   max-width: 80ch;
+
+  @media (min-width: 801px) {
+    font-size: 22px;
+  }
+}
+
+.header-subtitle__step {
+  display: block;
+
+  @media (min-width: 801px) {
+    display: inline;
+  }
 }
 
 .header-subtitle__number {
