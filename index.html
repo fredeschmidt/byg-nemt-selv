@@ -8,7 +8,22 @@
   </head>
   <body>
     <header id="header">
-      <img class="header-logo" src="images/logo.png" alt="Byg Nemt Selv logo" />
+      <a href="index.html" aria-label="Tilbage til forsiden">
+        <img class="header-logo" src="images/logo.png" alt="Byg Nemt Selv logo" />
+      </a>
+      <nav class="site-top-nav" aria-label="Top navigation">
+        <div class="site-top-nav__item">
+          <a class="site-top-nav__trigger" href="index.html">Opskrifter</a>
+          <ul class="site-top-nav__dropdown" id="recipes-dropdown" aria-label="Opskrift-kategorier"></ul>
+        </div>
+        <div class="site-top-nav__item">
+          <a class="site-top-nav__trigger" href="#category-grid">Shop</a>
+          <ul class="site-top-nav__dropdown" aria-label="Shop-kategorier">
+            <li><a href="starter-kit.html">Værktøjs starter kit</a></li>
+          </ul>
+        </div>
+        <a href="#">Indkøbskurv</a>
+      </nav>
       <div class="header-inner">
         <h1 class="header-title">MØBEL OPSKRIFTER</h1>
         <p class="header-subtitle">
@@ -84,6 +99,22 @@
         if (!list || !filterLevel || !filterTime) return;
 
         const items = Array.from(list.querySelectorAll(".category-grid__item"));
+        const recipesDropdown = document.getElementById("recipes-dropdown");
+
+        if (recipesDropdown) {
+          items.forEach((item) => {
+            const card = item.querySelector(".category-card");
+            const title = item.querySelector(".category-card__title");
+            if (!card || !title) return;
+
+            const listItem = document.createElement("li");
+            const link = document.createElement("a");
+            link.href = card.getAttribute("href") || "#";
+            link.textContent = title.textContent?.trim() || "";
+            listItem.appendChild(link);
+            recipesDropdown.appendChild(listItem);
+          });
+        }
 
         const applyFilters = () => {
           const levelValue = filterLevel.value;
