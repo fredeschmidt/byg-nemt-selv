@@ -1,0 +1,40 @@
+.category-filter {
+  width: min(1200px, 100%);
+  margin: 0 auto;
+  padding: 0 14px 12px;
+
+  @media (min-width: 1001px) {
+    padding: 0 20px 16px;
+  }
+}
+
+.category-filter__form {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 10px;
+
+  @media (min-width: 801px) {
+    grid-template-columns: repeat(2, minmax(0, 220px));
+    justify-content: center;
+  }
+}
+
+.category-filter__field {
+  display: grid;
+  gap: 4px;
+}
+
+.category-filter__label {
+  font-size: 0.9rem;
+  font-weight: var(--font-weight-semibold);
+  color: var(--color-text-default);
+}
+
+.category-filter select {
+  width: 100%;
+  border: 1px solid var(--color-text-neutral);
+  background: var(--color-text-inverse);
+  color: var(--color-text-default);
+  font: inherit;
+  padding: 8px 10px;
+}

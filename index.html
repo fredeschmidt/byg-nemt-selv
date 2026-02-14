@@ -20,61 +20,98 @@
     </header>
 
     <main>
+      <section class="category-filter" aria-label="Filtrér og sorter kategorier">
+        <form class="category-filter__form" id="category-filter-form">
+          <label class="category-filter__field">
+            <span class="category-filter__label">Sværhedsgrad</span>
+            <select id="filter-level" name="filter_level">
+              <option value="all">Alle</option>
+              <option value="ikea-nemt">IKEA-nemt</option>
+              <option value="svaert">Svært</option>
+            </select>
+          </label>
+
+          <label class="category-filter__field">
+            <span class="category-filter__label">Tid</span>
+            <select id="filter-time" name="filter_time">
+              <option value="all">Alle</option>
+              <option value="day">1 dag</option>
+              <option value="weekend">1 weekend</option>
+            </select>
+          </label>
+        </form>
+      </section>
+
       <nav id="category-grid" aria-label="Vælg møbeltype">
-        <ul class="category-grid__list">
-          <li class="category-grid__item">
+        <ul class="category-grid__list" id="category-grid-list">
+          <li class="category-grid__item" data-time="day" data-level="ikea-nemt">
             <a class="category-card" href="kasse.html" style="background-image: url('../../images/qubik.jpg');">
               <div class="category-card__content">
                 <h2 class="category-card__title">Kasse</h2>
-                <ul class="category-card__facts" aria-label="Nøgleinformation">
-                  <li><strong>Tid:</strong> 1 dag</li>
-                  <li><strong>Niveau:</strong> IKEA-nemt</li>
-                  <li><strong>Pris:</strong> fra 199 kr.</li>
-                </ul>
               </div>
             </a>
           </li>
 
-          <li class="category-grid__item">
+          <li class="category-grid__item" data-time="weekend" data-level="ikea-nemt">
             <a class="category-card" href="rullekommode.html" style="background-image: url('../../images/rullekommode.jpg');">
               <div class="category-card__content">
                 <h2 class="category-card__title">Bænk med opbevaring</h2>
-                <ul class="category-card__facts" aria-label="Nøgleinformation">
-                  <li><strong>Tid:</strong> 1 weekend</li>
-                  <li><strong>Niveau:</strong> IKEA-nemt</li>
-                  <li><strong>Pris:</strong> fra 199 kr.</li>
-                </ul>
               </div>
             </a>
           </li>
 
-          <li class="category-grid__item">
+          <li class="category-grid__item" data-time="weekend" data-level="ikea-nemt">
             <a class="category-card" href="smal-opbevaring.html" style="background-image: url('../../images/smal-opbevaring.jpg');">
               <div class="category-card__content">
                 <h2 class="category-card__title">Smal opbevaring</h2>
-                <ul class="category-card__facts" aria-label="Nøgleinformation">
-                  <li><strong>Tid:</strong> 1 weekend</li>
-                  <li><strong>Niveau:</strong> IKEA-nemt</li>
-                  <li><strong>Pris:</strong> fra 199 kr.</li>
-                </ul>
               </div>
             </a>
           </li>
 
-          <li class="category-grid__item">
+          <li class="category-grid__item" data-time="weekend" data-level="svaert">
             <a class="category-card" href="slagbank.html" style="background-image: url('../../images/slagbank.jpg');">
               <div class="category-card__content">
                 <h2 class="category-card__title">Slagbænk</h2>
-                <ul class="category-card__facts" aria-label="Nøgleinformation">
-                  <li><strong>Tid:</strong> 1 weekend</li>
-                  <li><strong>Niveau:</strong> IKEA-nemt</li>
-                  <li><strong>Pris:</strong> fra 199 kr.</li>
-                </ul>
               </div>
             </a>
           </li>
         </ul>
       </nav>
     </main>
+    <script>
+      (() => {
+        const list = document.getElementById("category-grid-list");
+        const filterLevel = document.getElementById("filter-level");
+        const filterTime = document.getElementById("filter-time");
+        if (!list || !filterLevel || !filterTime) return;
+
+        const items = Array.from(list.querySelectorAll(".category-grid__item"));
+
+        const applyFilters = () => {
+          const levelValue = filterLevel.value;
+          const timeValue = filterTime.value;
+
+          items.forEach((item) => {
+            let matchesLevel = true;
+            if (levelValue === "ikea-nemt") {
+              matchesLevel = item.dataset.level === "ikea-nemt";
+            } else if (levelValue === "svaert") {
+              matchesLevel = item.dataset.level === "svaert";
+            }
+            let matchesTime = true;
+            if (timeValue === "day") {
+              matchesTime = item.dataset.time === "day";
+            } else if (timeValue === "weekend") {
+              matchesTime = item.dataset.time === "weekend";
+            }
+            item.hidden = !(matchesLevel && matchesTime);
+          });
+        };
+
+        filterLevel.addEventListener("change", applyFilters);
+        filterTime.addEventListener("change", applyFilters);
+        applyFilters();
+      })();
+    </script>
   </body>
 </html>
