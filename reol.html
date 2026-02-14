@@ -56,8 +56,146 @@
                 <p class="solution-picker__meta">Mere karakter og visuel rytme. God hvis reolen også skal være et statement.</p>
               </li>
             </ul>
+          </fieldset>
 
-            <legend id="solution-picker-title" class="solution-picker__legend"><span class="header-subtitle__number">02</span> Indtast mål og ønsker</legend>
+          <fieldset class="solution-picker__fieldset solution-picker__fieldset--measure">
+            <legend id="solution-picker-measure-title" class="solution-picker__legend">
+              <span class="header-subtitle__number">02</span> Indtast mål og ønsker
+            </legend>
+
+            <section class="solution-picker__subsection" aria-labelledby="placement-title">
+              <p class="solution-picker__question">Hvor skal reolen stå?</p>
+              <ul class="solution-picker__choice-list">
+                <li>
+                  <label class="solution-picker__choice">
+                    <input type="radio" name="placement_choice" value="between-walls" />
+                    <span>Mellem to vægge (væg-til-væg)</span>
+                  </label>
+                </li>
+                <li>
+                  <label class="solution-picker__choice">
+                    <input type="radio" name="placement_choice" value="one-wall" />
+                    <span>Mod én væg (fritstående langs væg)</span>
+                  </label>
+                </li>
+                <li>
+                  <label class="solution-picker__choice">
+                    <input type="radio" name="placement_choice" value="alcove" />
+                    <span>I en niche/alkove</span>
+                  </label>
+                </li>
+              </ul>
+            </section>
+
+            <section class="solution-picker__subsection" aria-labelledby="measure-title">
+              <ol class="solution-picker__measure-list">
+                <li class="solution-picker__measure-item">
+                  <p class="solution-picker__question">Bredde</p>
+                  <p class="solution-picker__measure-question">
+                    <label for="wall-width" class="visually-hidden">Hvor bred må reolen maks være (cm)</label>
+                    <input id="wall-width" name="wall_width_cm" type="number" inputmode="numeric" min="1" placeholder="Indtast bredde i cm" />
+                  </p>
+                  <p class="solution-picker__tip">Tip: hvis den står mellem to vægge, trækker vi automatisk 0,5-1 cm fra, så den passer.</p>
+                </li>
+
+                <li class="solution-picker__measure-item">
+                  <p class="solution-picker__question">Højde</p>
+                  <p class="solution-picker__measure-question">
+                    <label for="wall-height" class="visually-hidden">Hvor høj vil du have den (cm)</label>
+                    <input id="wall-height" name="wall_height_cm" type="number" inputmode="numeric" min="1" placeholder="Indtast højde i cm" />
+                  </p>
+                  <p class="solution-picker__tip">Tip: fuld højde eller fx 200 cm?</p>
+                </li>
+
+                <li class="solution-picker__measure-item">
+                  <p class="solution-picker__question">Dybde</p>
+                  <p class="solution-picker__measure-question">
+                    <label for="shelf-depth" class="visually-hidden">Hvor dyb må den være (cm)</label>
+                    <input id="shelf-depth" name="shelf_depth_cm" type="number" inputmode="numeric" min="1" placeholder="Indtast dybde i cm" />
+                  </p>
+                  <p class="solution-picker__tip">Tip: 25-30 cm til bøger, 35-40 cm til kasser.</p>
+                </li>
+              </ol>
+            </section>
+
+            <section class="solution-picker__subsection" aria-labelledby="wall-type">
+              <p class="solution-picker__question">Hvilken væg skal den fastgøres til?</p>
+              <ul class="solution-picker__choice-list">
+                <li>
+                  <label class="solution-picker__choice">
+                    <input type="radio" name="wall_type" value="gips" />
+                    <span>Gips</span>
+                  </label>
+                </li>
+                <li>
+                  <label class="solution-picker__choice">
+                    <input type="radio" name="wall_type" value="mursten" />
+                    <span>Mursten</span>
+                  </label>
+                </li>
+                <li>
+                  <label class="solution-picker__choice">
+                    <input type="radio" name="wall_type" value="beton" />
+                    <span>Beton</span>
+                  </label>
+                </li>
+                <li>
+                  <label class="solution-picker__choice">
+                    <input type="radio" name="wall_type" value="ved-ikke" />
+                    <span>Ved ikke</span>
+                  </label>
+                </li>
+              </ul>
+            </section>
+
+            <section class="solution-picker__subsection" aria-labelledby="budget">
+              <p class="solution-picker__question">Look og budget</p>
+              <ul class="solution-picker__choice-list">
+                <li>
+                  <label class="solution-picker__choice">
+                    <input type="radio" name="finish_budget" value="budget" />
+                    <span>Budget (byggemarked, nemt)</span>
+                  </label>
+                </li>
+                <li>
+                  <label class="solution-picker__choice">
+                    <input type="radio" name="finish_budget" value="standard" />
+                    <span>Standard (pænt + solidt)</span>
+                  </label>
+                </li>
+                <li>
+                  <label class="solution-picker__choice">
+                    <input type="radio" name="finish_budget" value="premium" />
+                    <span>Premium (lækker finish)</span>
+                  </label>
+                </li>
+              </ul>
+            </section>
+
+            <section class="solution-picker__subsection" aria-labelledby="overflade"></section>
+              <p class="solution-picker__question">Overflade</p>
+              <ul class="solution-picker__choice-list">
+                <li>
+                  <label class="solution-picker__choice">
+                    <input type="radio" name="finish_surface" value="natural-wood" />
+                    <span>Natur træ</span>
+                  </label>
+                </li>
+                <li>
+                  <label class="solution-picker__choice">
+                    <input type="radio" name="finish_surface" value="painted" />
+                    <span>Malet</span>
+                  </label>
+                </li>
+                <li>
+                  <label class="solution-picker__choice">
+                    <input type="radio" name="finish_surface" value="decide-later" />
+                    <span>Jeg beslutter senere</span>
+                  </label>
+                </li>
+              </ul>
+            </section>
+
           </fieldset>
         </form>
       </section>
