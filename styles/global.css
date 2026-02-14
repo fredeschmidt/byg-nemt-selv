@@ -580,6 +580,67 @@
   cursor: not-allowed;
 }
 
+.guide-reol {
+  width: min(1100px, 100%);
+  margin: 0 auto;
+  padding: 20px 14px 36px;
+}
+@media (min-width: 801px) {
+  .guide-reol {
+    padding: 30px 20px 48px;
+  }
+}
+
+.guide-reol__sheet {
+  background: var(--color-text-inverse);
+  border: 1px solid var(--color-text-neutral);
+  padding: 18px 16px;
+  color: var(--color-text-default);
+}
+@media (min-width: 801px) {
+  .guide-reol__sheet {
+    padding: 26px 24px;
+  }
+}
+
+.guide-reol__header {
+  margin-bottom: 18px;
+}
+.guide-reol__header h2 {
+  margin: 0 0 10px;
+  font-size: clamp(1.2rem, 2.4vw, 1.75rem);
+}
+.guide-reol__header p {
+  margin: 0 0 6px;
+  line-height: var(--line-height-base);
+}
+
+.guide-reol__section {
+  padding-top: 14px;
+  margin-top: 14px;
+  border-top: 1px solid rgba(31, 40, 51, 0.15);
+}
+.guide-reol__section h3 {
+  margin: 0 0 10px;
+  font-size: clamp(1.05rem, 2vw, 1.35rem);
+}
+.guide-reol__section p,
+.guide-reol__section li {
+  line-height: var(--line-height-base);
+  color: var(--color-text-default);
+}
+.guide-reol__section p {
+  margin: 0 0 8px;
+}
+.guide-reol__section ul,
+.guide-reol__section ol {
+  margin: 0 0 10px;
+  padding-left: 20px;
+}
+.guide-reol__section li {
+  margin: 0 0 4px;
+}
+
 :root {
   --header-height: 112px;
   --font-family-base: "Roboto", sans-serif;

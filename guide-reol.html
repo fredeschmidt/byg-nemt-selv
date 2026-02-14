@@ -1,0 +1,285 @@
+<!doctype html>
+<html lang="da">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Guide Reol | Byg Nemt Selv</title>
+    <link rel="stylesheet" href="styles/global.css" />
+  </head>
+  <body>
+    <header id="header">
+      <a href="index.html" aria-label="Tilbage til forsiden">
+        <img class="header-logo" src="images/logo.png" alt="Byg Nemt Selv logo" />
+      </a>
+      <div class="header-inner">
+        <h1 class="header-title">Byggeguide</h1>
+      </div>
+    </header>
+
+    <main class="guide-reol">
+      <article class="guide-reol__sheet">
+        <header class="guide-reol__header">
+          <h2>BYG NEMT SELV - Byggeguide (PDF)</h2>
+          <p><strong>Projekt:</strong> Væg-til-væg reol</p>
+          <p><strong>Valgt løsning:</strong> <span id="guide-solution">-</span></p>
+          <p><strong>Genereret til:</strong> <span id="guide-name">-</span></p>
+          <p><strong>Dato:</strong> <span id="guide-date">-</span></p>
+        </header>
+
+        <section class="guide-reol__section">
+          <h3>1) Dine mål (indtastet)</h3>
+          <ul>
+            <li>Fri bredde mellem vægge: <strong id="guide-width">-</strong></li>
+            <li>Ønsket højde: <strong id="guide-height">-</strong></li>
+            <li>Maks dybde: <strong id="guide-depth">-</strong></li>
+            <li>Sokkel-/fodliste dybde (hvis der er): <strong id="guide-baseboard">-</strong> (valgfri)</li>
+            <li>Lofttype: <strong id="guide-ceiling-type">-</strong> (valgfri)</li>
+            <li>Vægtype: <strong id="guide-wall-type">-</strong></li>
+            <li>Skal reolen gå helt til loft? <strong id="guide-to-ceiling">-</strong></li>
+            <li>Brug: <strong id="guide-usage">-</strong></li>
+          </ul>
+          <p>
+            <strong>Vores tilpasning:</strong> Hvis det er væg-til-væg, fratrækker vi automatisk
+            <strong id="guide-adjustment">0,5-1,0 cm</strong> i samlet bredde, så den kan komme op uden at klemme.
+          </p>
+        </section>
+
+        <section class="guide-reol__section">
+          <h3>2) Overblik - det du bygger</h3>
+          <p>Du bygger en reol, der fylder hele væggen fra væg til væg og består af:</p>
+          <ul>
+            <li>2 sider (venstre/højre)</li>
+            <li><span id="guide-shelf-count-inline">-</span> hylder (fast eller flytbar - afhænger af løsning)</li>
+            <li>Top/bund-stiver (for stabilitet)</li>
+            <li>Vægfastgørelse (anbefales for sikkerhed)</li>
+          </ul>
+          <p>Tidsforbrug: 4-8 timer</p>
+          <p>Sværhedsgrad: IKEA-nemt</p>
+          <p>Værktøj: Det du typisk har derhjemme (se punkt 7)</p>
+        </section>
+
+        <section class="guide-reol__section">
+          <h3>3) Din reol - mål og opsætning</h3>
+          <ul>
+            <li>Bredde: <strong id="guide-adjusted-width">-</strong> (inkl. vores fradrag)</li>
+            <li>Højde: <strong id="guide-height-2">-</strong></li>
+            <li>Dybde: <strong id="guide-depth-2">-</strong></li>
+          </ul>
+          <p>Hyldeafstand (anbefalet ud fra "brug"): <strong id="guide-spacing">-</strong></p>
+          <p>Antal hylder: <strong id="guide-shelf-count">-</strong></p>
+        </section>
+
+        <section class="guide-reol__section">
+          <h3>4) Materialer (præcis liste)</h3>
+          <ul>
+            <li>Sider: 2 stk plader <span id="guide-thickness-1">-</span> - skåret til <span id="guide-side-dim">-</span></li>
+            <li>Hylder: <span id="guide-shelf-count-2">-</span> stk plader <span id="guide-thickness-2">-</span> - skåret til <span id="guide-shelf-dim">-</span></li>
+            <li>Top/bund-stiver: 2 stk - skåret til <span id="guide-stiffener-dim">-</span></li>
+            <li>Vinkelbeslag til vægfastgørelse: <span id="guide-brackets">-</span> stk</li>
+            <li>Hyldebærere (hvis flytbare): <span id="guide-bearers">-</span> stk</li>
+            <li>Filtdupper: 8-12 stk</li>
+            <li>Træskrue 4,5 x 50 mm: ca. <span id="guide-screws-50">-</span> stk</li>
+            <li>Træskrue 4,0 x 30 mm: ca. <span id="guide-screws-30">-</span> stk</li>
+            <li>Vægfastgørelse: <span id="guide-wall-fix">-</span></li>
+          </ul>
+        </section>
+
+        <section class="guide-reol__section">
+          <h3>5) Skæreliste (tag den med i byggemarkedet)</h3>
+          <ul>
+            <li>Sideplader: 2 stk <span id="guide-cut-side">-</span></li>
+            <li>Hylder: <span id="guide-cut-shelves-count">-</span> stk <span id="guide-cut-shelf">-</span></li>
+            <li>Stivere: 2 stk <span id="guide-cut-stiffener">-</span></li>
+            <li>Fodliste-hak (hvis valgt): <span id="guide-cut-notch">Intet hak angivet</span></li>
+          </ul>
+          <p>Tip: Bed om pladeskæring + let kantslibning. Det gør finish meget pænere.</p>
+        </section>
+
+        <section class="guide-reol__section">
+          <h3>6) Indkøbsliste - præcis hvor du køber det</h3>
+          <p>Primær butik: <strong id="guide-store-primary">-</strong></p>
+          <p>Alternativ butik: <strong id="guide-store-secondary">-</strong></p>
+          <ul>
+            <li>"Plade <span id="guide-thickness-3">-</span>" + pladeskæring</li>
+            <li>"Træskruer/spånpladeskruer 4,5x50"</li>
+            <li>"Træskruer 4,0x30"</li>
+            <li>"Vinkelbeslag" (til vægfastgørelse)</li>
+            <li>"Rawlplugs til <span id="guide-wall-type-2">-</span>"</li>
+            <li>"Filtdupper"</li>
+            <li>(Valgfrit) "Kantbånd"</li>
+          </ul>
+        </section>
+
+        <section class="guide-reol__section">
+          <h3>7) Værktøj (minimum)</h3>
+          <ul>
+            <li>Skruemaskine/boremaskine</li>
+            <li>Målebånd + blyant</li>
+            <li>Vaterpas (eller mobil-app)</li>
+            <li>Bitssæt (PH2/TX)</li>
+            <li>(Valgfrit) sandpapir 120/180</li>
+            <li>(Valgfrit) stiksav</li>
+          </ul>
+        </section>
+
+        <section class="guide-reol__section">
+          <h3>8) Trin-for-trin (byggeplan)</h3>
+          <ol>
+            <li>Forbered (10-20 min): tjek mål og slib kanter let.</li>
+            <li>Byg rammen (30-60 min): top/bund-stiver på sideplader, tjek vinkel.</li>
+            <li>Monter hylder (60-120 min): markér og montér efter anbefalet afstand.</li>
+            <li>Sæt reolen på plads (10-20 min): justér afstand og rethed.</li>
+            <li>Vægfastgør (10-20 min): beslag i top, bor/plugs efter vægtype.</li>
+            <li>Finish (10 min): filtdutter og slutkontrol.</li>
+          </ol>
+        </section>
+
+        <section class="guide-reol__section">
+          <h3>9) Stikkontakter (trick der gør det nemt)</h3>
+          <ul>
+            <li>A) Kabel-slot i bagkant (nemmest)</li>
+            <li>B) Hul i bagplade (fx 8x8 cm)</li>
+            <li>C) Fodliste-hack nederst bagtil</li>
+          </ul>
+          <p>Sikkerhed: Flyt ikke på el-installationer selv.</p>
+        </section>
+
+        <section class="guide-reol__section">
+          <h3>10) Slag på tasken - pris i byggemarkedet (ca.)</h3>
+          <ul>
+            <li>Budget: ca. 900-1.800 kr</li>
+            <li>Standard: ca. 1.800-3.500 kr</li>
+            <li>Premium: ca. 3.500-6.000 kr</li>
+          </ul>
+        </section>
+
+        <section class="guide-reol__section">
+          <h3>11) Hvis noget driller (hurtige fixes)</h3>
+          <ul>
+            <li>Klemmer mellem vægge: slib 1-2 mm af kant.</li>
+            <li>Hylder buer: tilføj midterstøtte eller gå op i tykkelse.</li>
+            <li>Reol står skævt: justér med filtdutter/kiler og fastgør i top.</li>
+            <li>Væg smuldrer: brug længere plugs/skruer eller gå en størrelse op.</li>
+          </ul>
+        </section>
+      </article>
+    </main>
+
+    <script>
+      (() => {
+        const params = new URLSearchParams(window.location.search);
+
+        const value = (key) => (params.get(key) || "").trim();
+        const numberValue = (key) => {
+          const parsed = Number(value(key).replace(",", "."));
+          return Number.isFinite(parsed) && parsed > 0 ? parsed : null;
+        };
+        const cm = (num) => (num ? `${num.toLocaleString("da-DK", { maximumFractionDigits: 1 })} cm` : "-");
+
+        const labels = {
+          solution_choice: {
+            a: "Løsning A - Klassisk væg-til-væg med faste hylder (kan ændres til B/C)",
+            b: "Løsning B - Reol med lukkede moduler nederst",
+            c: "Løsning C - Asymmetrisk designreol",
+          },
+          wall_type: { gypsum: "Gips", brick: "Mursten", concrete: "Beton", unknown: "Ved ikke" },
+          ceiling_type: { flat: "Fladt", sloped: "Skråt" },
+          to_ceiling: { yes: "Ja", no: "Nej" },
+          usage_type: { books: "Bøger", boxes: "Kasser", mix: "Mix" },
+          finish_budget: { budget: "Budget", standard: "Standard", premium: "Premium" },
+        };
+
+        const pick = (group, fallback = "-") => labels[group]?.[value(group)] || fallback;
+
+        const width = numberValue("wall_width_cm");
+        const height = numberValue("wall_height_cm");
+        const depth = numberValue("shelf_depth_cm");
+        const baseboard = numberValue("baseboard_depth_cm");
+        const betweenWalls = value("placement_choice") === "between-walls";
+        const widthDeduction = betweenWalls && width ? 0.8 : 0;
+        const adjustedWidth = width ? Math.max(width - widthDeduction, 0) : null;
+
+        const usage = value("usage_type");
+        const spacingLabel =
+          usage === "books" ? "Bøger: 28-32 cm mellem hylder" : usage === "boxes" ? "Kasser: 32-38 cm mellem hylder" : "Mix: 30-35 cm";
+        const avgSpacing = usage === "books" ? 30 : usage === "boxes" ? 35 : 32.5;
+        const shelfCount = height ? Math.max(3, Math.round(height / avgSpacing) - 1) : null;
+
+        const budget = value("finish_budget");
+        const thicknessMm = budget === "premium" ? 22 : 18;
+        const thicknessText = `${thicknessMm} mm`;
+        const shelfSpanCm = adjustedWidth ? Math.max(adjustedWidth - (thicknessMm / 10) * 2, 10) : null;
+        const bracketCount = adjustedWidth ? (adjustedWidth <= 120 ? 2 : adjustedWidth <= 220 ? 4 : 6) : 4;
+        const bearerCount = shelfCount ? shelfCount * 4 : "-";
+        const screws50 = shelfCount ? shelfCount * 4 + 12 : "-";
+        const screws30 = shelfCount ? shelfCount * 4 : "-";
+
+        const wallFix =
+          value("wall_type") === "gypsum"
+            ? "Gipsankre / ekspansionsplugs + skruer"
+            : value("wall_type") === "brick"
+              ? "Rawlplugs 8 mm + skruer 5x60"
+              : value("wall_type") === "concrete"
+                ? "Rawlplugs 8-10 mm + skruer 5-6x60"
+                : "Vælg plugs/skruer efter testboring";
+
+        const primaryStore = budget === "budget" ? "Silvan" : budget === "premium" ? "XL-Byg" : "Bauhaus";
+        const secondaryStore = primaryStore === "Bauhaus" ? "Silvan" : "Bauhaus";
+
+        const setText = (id, text) => {
+          const node = document.getElementById(id);
+          if (node) node.textContent = text;
+        };
+
+        const date = new Date();
+        const day = String(date.getDate()).padStart(2, "0");
+        const month = String(date.getMonth() + 1).padStart(2, "0");
+        const year = date.getFullYear();
+
+        setText("guide-solution", pick("solution_choice"));
+        setText("guide-name", value("customer_name") || "Ikke angivet");
+        setText("guide-date", `${day}-${month}-${year}`);
+
+        setText("guide-width", cm(width));
+        setText("guide-height", cm(height));
+        setText("guide-depth", cm(depth));
+        setText("guide-baseboard", baseboard ? cm(baseboard) : "Ikke angivet");
+        setText("guide-ceiling-type", pick("ceiling_type", "Ikke angivet"));
+        setText("guide-wall-type", pick("wall_type"));
+        setText("guide-wall-type-2", pick("wall_type").toLowerCase());
+        setText("guide-to-ceiling", pick("to_ceiling"));
+        setText("guide-usage", pick("usage_type"));
+        setText("guide-adjustment", betweenWalls ? "0,5-1,0 cm" : "0,0 cm");
+
+        setText("guide-shelf-count-inline", shelfCount ? String(shelfCount) : "-");
+        setText("guide-adjusted-width", cm(adjustedWidth));
+        setText("guide-height-2", cm(height));
+        setText("guide-depth-2", cm(depth));
+        setText("guide-spacing", spacingLabel);
+        setText("guide-shelf-count", shelfCount ? String(shelfCount) : "-");
+
+        setText("guide-thickness-1", thicknessText);
+        setText("guide-thickness-2", thicknessText);
+        setText("guide-thickness-3", thicknessText);
+        setText("guide-side-dim", `${cm(height)} x ${cm(depth)}`);
+        setText("guide-shelf-count-2", shelfCount ? String(shelfCount) : "-");
+        setText("guide-shelf-dim", `${cm(shelfSpanCm)} x ${cm(depth)}`);
+        setText("guide-stiffener-dim", `${cm(shelfSpanCm)} x 8 cm`);
+        setText("guide-brackets", String(bracketCount));
+        setText("guide-bearers", String(bearerCount));
+        setText("guide-screws-50", String(screws50));
+        setText("guide-screws-30", String(screws30));
+        setText("guide-wall-fix", wallFix);
+
+        setText("guide-cut-side", `${cm(height)} x ${cm(depth)}`);
+        setText("guide-cut-shelves-count", shelfCount ? String(shelfCount) : "-");
+        setText("guide-cut-shelf", `${cm(shelfSpanCm)} x ${cm(depth)}`);
+        setText("guide-cut-stiffener", `${cm(shelfSpanCm)} x 8 cm`);
+        setText("guide-cut-notch", baseboard ? `Hak ${cm(baseboard)} dybt og 8 cm højt` : "Intet hak angivet");
+
+        setText("guide-store-primary", primaryStore);
+        setText("guide-store-secondary", secondaryStore);
+      })();
+    </script>
+  </body>
+</html>

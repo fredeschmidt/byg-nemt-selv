@@ -1,0 +1,65 @@
+.guide-reol {
+  width: min(1100px, 100%);
+  margin: 0 auto;
+  padding: 20px 14px 36px;
+
+  @media (min-width: 801px) {
+    padding: 30px 20px 48px;
+  }
+}
+
+.guide-reol__sheet {
+  background: var(--color-text-inverse);
+  border: 1px solid var(--color-text-neutral);
+  padding: 18px 16px;
+  color: var(--color-text-default);
+
+  @media (min-width: 801px) {
+    padding: 26px 24px;
+  }
+}
+
+.guide-reol__header {
+  margin-bottom: 18px;
+
+  h2 {
+    margin: 0 0 10px;
+    font-size: clamp(1.2rem, 2.4vw, 1.75rem);
+  }
+
+  p {
+    margin: 0 0 6px;
+    line-height: var(--line-height-base);
+  }
+}
+
+.guide-reol__section {
+  padding-top: 14px;
+  margin-top: 14px;
+  border-top: 1px solid rgba(31, 40, 51, 0.15);
+
+  h3 {
+    margin: 0 0 10px;
+    font-size: clamp(1.05rem, 2vw, 1.35rem);
+  }
+
+  p,
+  li {
+    line-height: var(--line-height-base);
+    color: var(--color-text-default);
+  }
+
+  p {
+    margin: 0 0 8px;
+  }
+
+  ul,
+  ol {
+    margin: 0 0 10px;
+    padding-left: 20px;
+  }
+
+  li {
+    margin: 0 0 4px;
+  }
+}
