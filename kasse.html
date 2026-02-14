@@ -1,0 +1,108 @@
+<!doctype html>
+<html lang="da">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Kasse | Byg Nemt Selv</title>
+    <link rel="stylesheet" href="styles/global.css" />
+  </head>
+  <body>
+    <header id="header">
+      <a href="index.html" aria-label="Tilbage til forsiden">
+        <img class="header-logo" src="images/logo.png" alt="Byg Nemt Selv logo" />
+      </a>
+      <div class="header-inner">
+        <h1 class="header-title">Kasse</h1>
+      </div>
+    </header>
+
+    <main>
+      <article class="product-detail" aria-label="Produktdetaljer for kasse">
+        <figure class="product-detail__media">
+          <div class="product-carousel" id="product-carousel">
+            <img
+              id="product-carousel-image"
+              src="images/qubik.jpg"
+              alt="Kasse i lyst træ med opbevaring"
+              data-index="0"
+            />
+            <button class="product-carousel__nav product-carousel__nav--prev" type="button" aria-label="Forrige billede"></button>
+            <button class="product-carousel__nav product-carousel__nav--next" type="button" aria-label="Næste billede"></button>
+          </div>
+          <figcaption class="product-carousel__thumbs" aria-label="Vælg billede">
+            <button class="product-carousel__thumb is-active" type="button" data-index="0" data-src="images/qubik.jpg" data-alt="Kasse i lyst træ med opbevaring">
+              <img src="images/qubik.jpg" alt="" />
+            </button>
+            <button class="product-carousel__thumb" type="button" data-index="1" data-src="images/qubik-2.jpg" data-alt="Kasse i træ set fra siden">
+              <img src="images/qubik-2.jpg" alt="" />
+            </button>
+            <button class="product-carousel__thumb" type="button" data-index="2" data-src="images/qubik-3.jpg" data-alt="Kasse i træ med detalje af samling">
+              <img src="images/qubik-3.jpg" alt="" />
+            </button>
+            <button class="product-carousel__thumb" type="button" data-index="3" data-src="images/qubik-4.jpg" data-alt="Kasse i træ i miljø">
+              <img src="images/qubik-4.jpg" alt="" />
+            </button>
+          </figcaption>
+        </figure>
+
+        <section class="product-detail__content">
+          <h2 class="product-detail__title">KASSE MODUL</h2>
+          <p class="product-detail__price">fra 199 DKK</p>
+
+          <a class="product-detail__buy" href="guide-reol.html">KØB GUIDE</a>
+
+          <div class="product-detail__description">
+            <h3>Beskrivelse</h3>
+            <p>
+              En enkel og robust kasse du kan bygge på én dag. Perfekt til opbevaring i entré,
+              børneværelse eller stue. Guiden giver dig præcise mål, materialeliste og trin-for-trin
+              byggeplan i samme stil som resten af Byg Nemt Selv.
+            </p>
+            <p>
+              Vælg målene efter dit behov, så får du en løsning der passer til dit rum og dit
+              budget.
+            </p>
+          </div>
+        </section>
+      </article>
+    </main>
+    <script>
+      (() => {
+        const carousel = document.getElementById("product-carousel");
+        const mainImage = document.getElementById("product-carousel-image");
+        if (!carousel || !mainImage) return;
+
+        const thumbs = Array.from(document.querySelectorAll(".product-carousel__thumb"));
+        const prevButton = carousel.querySelector(".product-carousel__nav--prev");
+        const nextButton = carousel.querySelector(".product-carousel__nav--next");
+
+        const setActive = (newIndex) => {
+          const safeIndex = ((newIndex % thumbs.length) + thumbs.length) % thumbs.length;
+          const thumb = thumbs[safeIndex];
+          if (!thumb) return;
+
+          mainImage.src = thumb.dataset.src || mainImage.src;
+          mainImage.alt = thumb.dataset.alt || mainImage.alt;
+          mainImage.dataset.index = String(safeIndex);
+
+          thumbs.forEach((item) => item.classList.remove("is-active"));
+          thumb.classList.add("is-active");
+        };
+
+        thumbs.forEach((thumb) => {
+          thumb.addEventListener("click", () => {
+            setActive(Number(thumb.dataset.index || 0));
+          });
+        });
+
+        prevButton?.addEventListener("click", () => {
+          setActive(Number(mainImage.dataset.index || 0) - 1);
+        });
+
+        nextButton?.addEventListener("click", () => {
+          setActive(Number(mainImage.dataset.index || 0) + 1);
+        });
+      })();
+    </script>
+  </body>
+</html>
