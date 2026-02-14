@@ -43,6 +43,15 @@
 
 .solution-picker__item {
   position: relative;
+  display: grid;
+  gap: 8px;
+  width: min(250px, 100%);
+  margin: 0 auto;
+
+  @media (min-width: 801px) {
+    width: 100%;
+    margin: 0;
+  }
 }
 
 .solution-picker__radio {
@@ -103,19 +112,10 @@
 }
 
 .solution-picker__meta {
-  margin: 0;
-  position: absolute;
-  left: 10px;
-  bottom: 10px;
-  z-index: 1;
-  color: var(--color-text-inverse);
-  border: 1px solid rgba(255, 255, 255, 0.9);
-  background: rgba(0, 0, 0, 0.35);
-  backdrop-filter: blur(2px);
+  margin: 0 0 6px;
+  color: var(--color-text-default);
   font-size: 0.9rem;
   line-height: 1.35;
-  padding: 10px 12px;
-  max-width: calc(100% - 20px);
 }
 
 .solution-picker__radio:checked + .solution-picker__card {
