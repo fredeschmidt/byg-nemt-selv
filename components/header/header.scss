@@ -102,6 +102,16 @@
   vertical-align: -0.1em;
 }
 
+.header-subtitle__number--small {
+  margin: 0;
+  font-size: 2.8em;
+  vertical-align: baseline;
+}
+
+.header-step-line {
+  margin: 0;
+}
+
 .header-subtitle__highlight {
   display: inline-block;
   color: var(--color-text-primary);
